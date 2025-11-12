@@ -1,0 +1,50 @@
+#bou-settings-wrap {
+    margin-top: 25px;
+    width: clamp(320px, calc(100% - 60px), 620px);
+}
+
+#bou-settings-wrap .postbox-header {
+    padding: 0 15px;
+}
+
+#bou-settings-wrap .postbox-header h1 {
+    font-size: 18px;
+}
+
+#bou-settings-wrap .inside {
+    padding-bottom: 5px; padding-left: 17px;
+}
+
+.single-bou-block:last-of-type {
+    margin-bottom: 25px;
+}
+
+.single-bou-block h2 {
+    font-size: 15px !important; line-height: 22px !important;
+    font-weight: 500 !important;
+}
+
+.single-bou-block p {
+    margin-top: 0;
+}
+
+.single-bou-block {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 20px;
+}
+
+.single-bou-block:not(:last-of-type) {
+    border-bottom: 1px solid #dedede;
+}
+
+.bou-settings-notices {
+    width: clamp(320px, calc(100% - 60px), 620px);
+}
+
+.bou-settings-notices .notice {
+    margin: 10px 0 0 !important;
+}
+
+#bou-settings-wrap p.submit {
+    padding: 0 !important;
+}
