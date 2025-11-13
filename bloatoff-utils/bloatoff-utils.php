@@ -3,7 +3,7 @@
  * Plugin Name:       Bloat-off - bloat removal and utilities
  * Plugin URI:        https://github.com/Nikodemsky/bloatoff
  * Description:       Plugin handles removal of most basic Wordpress bloat and gives an access to remove things like comments system completely.
- * Version:           0.9
+ * Version:           0.9.1
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            Wojciech Górski
@@ -35,3 +35,11 @@ require_once BLOATOFF_PLUGIN_DIR . 'includes/optimizations.php';
 
 // Utilities file
 require_once BLOATOFF_PLUGIN_DIR . 'includes/utilities.php';
+
+// Add settings link on plugin page
+function bu_add_settings_link($links) {
+    $settings_link = '<a href="' . admin_url('options-general.php?page=bloatoff-utils') . '">' . __('Settings', 'bloatoff-utils') . '</a>';
+    array_unshift($links, $settings_link);
+    return $links;
+}
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'bu_add_settings_link');
