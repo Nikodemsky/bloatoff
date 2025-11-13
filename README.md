@@ -1,6 +1,6 @@
 # Bloat-off: bloat removal and optimization utilities.
 
-Pretty straight-forward tool, that removes bunch of native Wordpress bloatware, along with useful utilities.
+Pretty straight-forward tool, that removes bunch of native Wordpress bloatware, also contains few useful utilities for optimization.
 
 ### Functionalities for version 0.9:
 
