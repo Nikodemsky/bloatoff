@@ -22,9 +22,38 @@ function bu_register_settings() {
 add_action('admin_init', 'bu_register_settings');
 
 // Sanitize settings
-function bu_sanitize_settings($input) {
+function bu_sanitize_number_setting($input, $setting_id, $min, $max, $default) {
     $sanitized = array();
     
+    if (isset($input[$setting_id . '_enabled']) && $input[$setting_id . '_enabled']) {
+        $sanitized[$setting_id . '_enabled'] = true;
+        
+        // Sanitize the interval value
+        if (isset($input[$setting_id . '_interval'])) {
+            $value = absint($input[$setting_id . '_interval']);
+            
+            // Ensure it's within range
+            if ($value < $min) {
+                $value = $min;
+            } elseif ($value > $max) {
+                $value = $max;
+            }
+            
+            $sanitized[$setting_id . '_interval'] = $value;
+        } else {
+            $sanitized[$setting_id . '_interval'] = $default;
+        }
+    } else {
+        $sanitized[$setting_id . '_enabled'] = false;
+    }
+    
+    return $sanitized;
+}
+
+function bu_sanitize_settings($input) {
+    $sanitized = array();
+
+    // Bloat
     if (isset($input['gutenberg'])) {
         $sanitized['gutenberg'] = (bool) $input['gutenberg'];
     }
@@ -36,6 +65,67 @@ function bu_sanitize_settings($input) {
     if (isset($input['rss'])) {
         $sanitized['rss'] = (bool) $input['rss'];
     }
+
+    if (isset($input['rsdl'])) {
+        $sanitized['rsdl'] = (bool) $input['rsdl'];
+    }
+
+    if (isset($input['shortlink'])) {
+        $sanitized['shortlink'] = (bool) $input['shortlink'];
+    }
+
+    if (isset($input['jquerymigrate'])) {
+        $sanitized['jquerymigrate'] = (bool) $input['jquerymigrate'];
+    }
+
+    if (isset($input['adminwidgets'])) {
+        $sanitized['adminwidgets'] = (bool) $input['adminwidgets'];
+    }
+
+    if (isset($input['restapilink'])) {
+        $sanitized['restapilink'] = (bool) $input['restapilink'];
+    }
+
+    if (isset($input['oembeddisclink'])) {
+        $sanitized['oembeddisclink'] = (bool) $input['oembeddisclink'];
+    }
+
+    if (isset($input['nativexmlsitemap'])) {
+        $sanitized['nativexmlsitemap'] = (bool) $input['nativexmlsitemap'];
+    }
+
+    if (isset($input['adminhelptabs'])) {
+        $sanitized['adminhelptabs'] = (bool) $input['adminhelptabs'];
+    }
+
+    if (isset($input['wplogoty'])) {
+        $sanitized['wplogoty'] = (bool) $input['wplogoty'];
+    }
+
+    // Utilities
+    if (isset($input['comments'])) {
+        $sanitized['comments'] = (bool) $input['comments'];
+    }
+
+    if (isset($input['widgets'])) {
+        $sanitized['widgets'] = (bool) $input['widgets'];
+    }
+
+    if (isset($input['oembed'])) {
+        $sanitized['oembed'] = (bool) $input['oembed'];
+    }
+
+    if (isset($input['xmlrpc'])) {
+        $sanitized['xmlrpc'] = (bool) $input['xmlrpc'];
+    }
+
+    if (isset($input['selfping'])) {
+        $sanitized['selfping'] = (bool) $input['selfping'];
+    }
+
+    // Heartbeat: min=1, max=86400, default=15
+    $heartbeat = bu_sanitize_number_setting($input, 'heartbeat', 1, 86400, 15);
+    $sanitized = array_merge($sanitized, $heartbeat);
     
     return $sanitized;
 }
@@ -111,3 +201,85 @@ function bu_enqueue_admin_styles($hook_suffix) {
     );
 }
 add_action('admin_enqueue_scripts', 'bu_enqueue_admin_styles');
+
+/**
+ * Render a settings block
+ * 
+ * @param array $args {
+ *     @type string $title       Summary title
+ *     @type string $description Main description
+ *     @type string $savings     Optional savings description (default: '')
+ *     @type string $setting_id  Checkbox setting ID
+ *     @type string $label       Checkbox label
+ *     @type array  $options     Settings options array
+ * }
+ */
+function bu_render_settings_block($args) {
+
+    // Set defaults
+    $defaults = array(
+        'title' => '',
+        'description' => '',
+        'savings' => '',
+        'warning' => '',
+        'setting_id' => '',
+        'label' => '',
+        'readmore' => '',
+        'options' => array()
+    );
+    
+    // Merge with defaults
+    $args = wp_parse_args($args, $defaults);
+    
+    // Extract variables for use in template
+    extract($args);
+    
+    // Load template
+    require BLOATOFF_PLUGIN_DIR . 'admin/partials/settings-block.php';
+}
+
+/**
+ * Render settings block with number input (checkbox + number)
+ * 
+ * @param array $args {
+ *     @type string $title              Summary title
+ *     @type string $description        Main description
+ *     @type string $savings            Optional savings description (default: '')
+ *     @type string $setting_id         Setting ID (e.g., 'heartbeat', 'autosave')
+ *     @type string $checkbox_label     Checkbox label text
+ *     @type string $number_label       Number input label text
+ *     @type int    $number_min         Minimum number value (default: 1)
+ *     @type int    $number_max         Maximum number value (default: 999999)
+ *     @type int    $number_default     Default number value (default: 1)
+ *     @type string $number_description Description for the number input
+ *     @type array  $options            Settings options array
+ * }
+ */
+function bu_render_number_block($args) {
+
+    // Set defaults
+    $defaults = array(
+        'title' => '',
+        'description' => '',
+        'savings' => '',
+        'setting_id' => '',
+        'checkbox_label' => '',
+        'number_label' => '',
+        'number_min' => 1,
+        'number_max' => 999999,
+        'number_default' => 1,
+        'number_description' => '',
+        'readmore' => '',
+        'warning' => '',
+        'options' => array()
+    );
+    
+    // Merge with defaults
+    $args = wp_parse_args($args, $defaults);
+    
+    // Extract variables for use in template
+    extract($args);
+    
+    // Load template
+    require BLOATOFF_PLUGIN_DIR . 'admin/partials/settings-block-number.php';
+}
