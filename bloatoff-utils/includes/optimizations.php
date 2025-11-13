@@ -78,6 +78,10 @@ function bu_disable_feeds() {
         add_action('do_feed_atom', 'bu_disable_feeds_callback', 1);
         add_action('do_feed_rss2_comments', 'bu_disable_feeds_callback', 1);
         add_action('do_feed_atom_comments', 'bu_disable_feeds_callback', 1);
+
+        // Links removal from header
+        remove_action( 'wp_head', 'feed_links', 2 );
+        remove_action( 'wp_head', 'feed_links_extra', 3 );
     }
 }
 add_action('init', 'bu_disable_feeds');
