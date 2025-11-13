@@ -32,6 +32,6 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Possibly tab-closing and moving for both blocks
 * Settings import/export via json perhaps
 * Reference to original sources in scripts, that have actually been copied and modified over
-* Think about the XML-RPC option, whetever it should stick or not - it's security thing, rather than anything related to actual optimization
+* Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization
 * Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)
 * Look for new optimization opportunities
