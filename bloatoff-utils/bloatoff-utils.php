@@ -1,16 +1,16 @@
 <?php
 /*
  * Plugin Name:       Bloat-off - bloat removal and utilities
- * Plugin URI:        https://w3wg.com
+ * Plugin URI:        https://github.com/Nikodemsky/bloatoff
  * Description:       Plugin handles removal of most basic Wordpress bloat and gives an access to remove things like comments system completely.
- * Version:           0.1
+ * Version:           0.9
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            Wojciech Górski
  * Author URI:        https://w3wg.com
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://w3wg.com
+ * Update URI:        https://github.com/Nikodemsky/bloatoff
  * Text Domain:       bloatoff-utils
  * Domain Path:       /languages
  */
@@ -32,3 +32,6 @@ if (is_admin()) {
 
 // Optimizations file
 require_once BLOATOFF_PLUGIN_DIR . 'includes/optimizations.php';
+
+// Utilities file
+require_once BLOATOFF_PLUGIN_DIR . 'includes/utilities.php';

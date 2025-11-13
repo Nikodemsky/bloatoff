@@ -52,80 +52,55 @@ function bu_sanitize_number_setting($input, $setting_id, $min, $max, $default) {
 
 function bu_sanitize_settings($input) {
     $sanitized = array();
+    
+    // Define settings by category
+    $settings_config = array(
+        
+        'boolean' => array(
 
-    // Bloat
-    if (isset($input['gutenberg'])) {
-        $sanitized['gutenberg'] = (bool) $input['gutenberg'];
+            // Bloat removal
+            'gutenberg',
+            'emojis',
+            'rss',
+            'rsdl',
+            'shortlink',
+            'jquerymigrate',
+            'adminwidgets',
+            'restapilink',
+            'oembeddisclink',
+            'nativexmlsitemap',
+            'adminhelptabs',
+            'wplogoty',
+
+            // Utilities
+            'comments',
+            'widgets',
+            'oembed',
+            'xmlrpc',
+            'selfping',
+        ),
+
+        'number' => array(
+            'heartbeat' => array('min' => 1, 'max' => 86400, 'default' => 15),
+        ),
+    );
+    
+    // Sanitize boolean settings
+    foreach ($settings_config['boolean'] as $setting) {
+        $sanitized[$setting] = !empty($input[$setting]);
     }
     
-    if (isset($input['emojis'])) {
-        $sanitized['emojis'] = (bool) $input['emojis'];
+    // Sanitize number settings
+    foreach ($settings_config['number'] as $setting_id => $config) {
+        $number_setting = bu_sanitize_number_setting(
+            $input, 
+            $setting_id, 
+            $config['min'], 
+            $config['max'], 
+            $config['default']
+        );
+        $sanitized = array_merge($sanitized, $number_setting);
     }
-    
-    if (isset($input['rss'])) {
-        $sanitized['rss'] = (bool) $input['rss'];
-    }
-
-    if (isset($input['rsdl'])) {
-        $sanitized['rsdl'] = (bool) $input['rsdl'];
-    }
-
-    if (isset($input['shortlink'])) {
-        $sanitized['shortlink'] = (bool) $input['shortlink'];
-    }
-
-    if (isset($input['jquerymigrate'])) {
-        $sanitized['jquerymigrate'] = (bool) $input['jquerymigrate'];
-    }
-
-    if (isset($input['adminwidgets'])) {
-        $sanitized['adminwidgets'] = (bool) $input['adminwidgets'];
-    }
-
-    if (isset($input['restapilink'])) {
-        $sanitized['restapilink'] = (bool) $input['restapilink'];
-    }
-
-    if (isset($input['oembeddisclink'])) {
-        $sanitized['oembeddisclink'] = (bool) $input['oembeddisclink'];
-    }
-
-    if (isset($input['nativexmlsitemap'])) {
-        $sanitized['nativexmlsitemap'] = (bool) $input['nativexmlsitemap'];
-    }
-
-    if (isset($input['adminhelptabs'])) {
-        $sanitized['adminhelptabs'] = (bool) $input['adminhelptabs'];
-    }
-
-    if (isset($input['wplogoty'])) {
-        $sanitized['wplogoty'] = (bool) $input['wplogoty'];
-    }
-
-    // Utilities
-    if (isset($input['comments'])) {
-        $sanitized['comments'] = (bool) $input['comments'];
-    }
-
-    if (isset($input['widgets'])) {
-        $sanitized['widgets'] = (bool) $input['widgets'];
-    }
-
-    if (isset($input['oembed'])) {
-        $sanitized['oembed'] = (bool) $input['oembed'];
-    }
-
-    if (isset($input['xmlrpc'])) {
-        $sanitized['xmlrpc'] = (bool) $input['xmlrpc'];
-    }
-
-    if (isset($input['selfping'])) {
-        $sanitized['selfping'] = (bool) $input['selfping'];
-    }
-
-    // Heartbeat: min=1, max=86400, default=15
-    $heartbeat = bu_sanitize_number_setting($input, 'heartbeat', 1, 86400, 15);
-    $sanitized = array_merge($sanitized, $heartbeat);
     
     return $sanitized;
 }
