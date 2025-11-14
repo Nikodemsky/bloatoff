@@ -38,3 +38,4 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * ~Remove saved options on uninstall~
 * Add translations files
 * Add polish translation
+* Apply RSS feeds removal from header links
