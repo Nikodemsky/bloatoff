@@ -36,3 +36,5 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)
 * Look for new optimization opportunities
 * ~Remove saved options on uninstall~
+* Add translations files
+* Add polish translation
