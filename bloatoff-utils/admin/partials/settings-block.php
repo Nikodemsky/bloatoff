@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
     <details>
         <summary>
             <?php echo esc_html($title); ?> 
-            <span class="more">[?]</span>
+            <span class="more" data-tooltip="<?php esc_html_e( 'Click, to show more info.', 'bloatoff-utils' ); ?>">[?]</span>
             <?php if (!empty($warning)): echo '<span class="bou-warning-asterisk">*</span>'; endif; ?>
         </summary>
         <aside>

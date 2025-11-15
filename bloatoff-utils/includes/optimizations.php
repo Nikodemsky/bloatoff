@@ -111,7 +111,7 @@ function bu_disable_shortlink() {
 add_action('init', 'bu_disable_rsd');
 
 // jQuery Migrate
-function bu_remove_jquery_migrate( $scripts ) {
+/*function bu_remove_jquery_migrate( $scripts ) {
     $options = get_option('bloatoff_settings', array());
 
     if (!empty($options['jquerymigrate'])) {
@@ -123,7 +123,7 @@ function bu_remove_jquery_migrate( $scripts ) {
         }}
     }
 }
-add_action( 'wp_default_scripts', 'bu_remove_jquery_migrate' );
+add_action( 'wp_default_scripts', 'bu_remove_jquery_migrate' );*/
 
 // Admin dashboard widgets
 function bu_remove_all_dashboard_widgets() {

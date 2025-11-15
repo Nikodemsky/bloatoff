@@ -64,7 +64,7 @@ function bu_sanitize_settings($input) {
             'rss',
             'rsdl',
             'shortlink',
-            'jquerymigrate',
+            /*'jquerymigrate',*/
             'adminwidgets',
             'restapilink',
             'oembeddisclink',

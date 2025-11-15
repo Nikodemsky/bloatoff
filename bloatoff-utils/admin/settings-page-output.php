@@ -44,6 +44,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('This option will remove all the styles and scripts related to native Wordpress emoji module; be aware - it will also remove emojis from TinyMCE editor.', 'bloatoff-utils'),
                 'savings' => __('About ~20kb of savings + removal of CDN calls and stylesheets.'),
                 'setting_id' => 'emojis',
+                'readmore' => 'https://wordpress.org/documentation/wordpress-version/version-4-2/#emoji',
                 'label' => __('Disable WordPress emojis?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -53,6 +54,7 @@ if (!defined('ABSPATH')) {
                 'title' => __('RSS feeds', 'bloatoff-utils'),
                 'description' => __('This will remove the native option of RSS feeds - including comments RSS feed.', 'bloatoff-utils'),
                 'setting_id' => 'rss',
+                'readmore' => 'https://developer.wordpress.org/advanced-administration/wordpress/feeds/',
                 'label' => __('Disable RSS feeds?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -95,7 +97,7 @@ if (!defined('ABSPATH')) {
             ));
 
             // jQuery Migrate
-            bu_render_settings_block(array(
+            /*bu_render_settings_block(array(
                 'title' => __('jQuery Migrate', 'bloatoff-utils'),
                 'description' => __('Tool for backward jQuery compability (It basically allows to preserve compability with jQuery versions prior to 1.9.), mostly redundant nowadays and disabled by default from WP versions 5.5.0 onwards; some plugins, scripts or modules might have kept it enabled.', 'bloatoff-utils'),
                 'savings' => __('About ~14kb of savings.'),
@@ -103,13 +105,14 @@ if (!defined('ABSPATH')) {
                 'readmore' => 'https://make.wordpress.org/core/2020/06/29/updating-jquery-version-shipped-with-wordpress/',
                 'label' => __('Remove jQuery Migrate script?', 'bloatoff-utils'),
                 'options' => $options
-            ));
+            ));*/
 
             // Admin Widgets
             bu_render_settings_block(array(
                 'title' => __('Admin widgets in Dashboard', 'bloatoff-utils'),
                 'description' => __('Removes all default widgets in admin dashboard - like quick draft, activity, news etc.', 'bloatoff-utils'),
                 'setting_id' => 'adminwidgets',
+                'readmore' => 'https://wordpress.org/documentation/article/dashboard-screen/#dashboard-%e2%86%92-home',
                 'label' => __('Remove all default Wordpress admin widgets in dashboard?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -129,6 +132,7 @@ if (!defined('ABSPATH')) {
                 'title' => __('Admin help tabs', 'bloatoff-utils'),
                 'description' => __('Removes all help tabs from the contextual help for the screen.', 'bloatoff-utils'),
                 'setting_id' => 'adminhelptabs',
+                'readmore' => 'https://wordpress.org/documentation/article/administration-screens/#help',
                 'label' => __('Remove admin help tabs?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -173,6 +177,7 @@ if (!defined('ABSPATH')) {
                 'title' => __('Widgets removal', 'bloatoff-utils'),
                 'description' => __('It will remove native widgets system (Appearance sub-menu).', 'bloatoff-utils'),
                 'setting_id' => 'widgets',
+                'readmore' => 'https://wordpress.org/documentation/article/manage-wordpress-widgets/',
                 'label' => __('Remove widget support?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -182,6 +187,7 @@ if (!defined('ABSPATH')) {
                 'title' => __('oEmbed restriction', 'bloatoff-utils'),
                 'description' => __('It will disable oEmbed on site, while keeping it enabled for external platforms/apps.', 'bloatoff-utils'),
                 'setting_id' => 'oembed',
+                'readmore' => 'https://developer.wordpress.org/advanced-administration/wordpress/oembed/',
                 'label' => __('Restrict oEmbed?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -209,7 +215,7 @@ if (!defined('ABSPATH')) {
             // Heartbeat
             bu_render_number_block(array(
                 'title' => __('WordPress Heartbeat API', 'bloatoff-utils'),
-                'description' => __('The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may delay these features.', 'bloatoff-utils'),
+                'description' => __('The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues on functionalities, that heavily relies on Heartbeat API.', 'bloatoff-utils'),
                 'savings' => __('Reduces server requests and CPU usage on both frontend and backend.', 'bloatoff-utils'),
                 'setting_id' => 'heartbeat',
                 'checkbox_label' => __('Modify WordPress Heartbeat interval?', 'bloatoff-utils'),
@@ -217,6 +223,7 @@ if (!defined('ABSPATH')) {
                 'number_min' => 1,
                 'number_max' => 86400,
                 'number_default' => 15,
+                'readmore' => 'https://developer.wordpress.org/plugins/javascript/heartbeat-api/',
                 'number_description' => __('Default: 15 seconds. Range: 1-86400 seconds (1 day).', 'bloatoff-utils'),
                 'warning' => __('WARNING: Be VERY careful, when changing that interval, it could brake some essential functionalities on your website.', 'bloatoff-utils'),
                 'options' => $options
