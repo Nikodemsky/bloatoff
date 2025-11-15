@@ -12,7 +12,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Shortlink removal
 * REST Discovery link removal
 * oEmbed discovery link removal
-* jQuery migrate removal (legacy option)
+* ~jQuery migrate removal (legacy option)~
 * Admin widgets in dashboard removal
 * Native XML sitemap removal
 * Admin help tabs removal
@@ -33,9 +33,14 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Settings import/export via json perhaps
 * Reference to original sources in scripts, that have actually been copied and modified over
 * Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization
-* Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)
+* ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~
 * Look for new optimization opportunities
 * ~Remove saved options on uninstall~
 * ~Add translations files~
 * Add polish translation
 * ~Apply RSS feeds removal from header links~
+* Find better info source for self-pingbacks
+* Find proper info source for gutenberg styles
+* Update translation files once descriptions are changed
+* Find proper info source for RSD
+* Find proper info source on Shortlink
