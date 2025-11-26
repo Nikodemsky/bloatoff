@@ -170,10 +170,18 @@ function bu_enqueue_admin_styles($hook_suffix) {
     
     wp_enqueue_style(
         'bou-styles',
-        BLOATOFF_PLUGIN_URL . 'admin/css/admin-style.css',
+        BLOATOFF_PLUGIN_URL . 'admin/assets/css/admin-style.min.css',
         array(),
         BLOATOFF_VERSION
     );
+
+    wp_enqueue_script(
+        'bou-form-handlers',
+        BLOATOFF_PLUGIN_URL . 'admin/assets/js/form-handler.min.js',
+        array(),
+        BLOATOFF_VERSION
+    );
+
 }
 add_action('admin_enqueue_scripts', 'bu_enqueue_admin_styles');
 
