@@ -28,10 +28,10 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 
 **To do**
 * Check how it works on multisite installations
-* Better descriptions and sources to more info
-* Possibly tab-closing and moving for both blocks
-* Settings import/export via json perhaps
-* Reference to original sources in scripts, that have actually been copied and modified over
+* Better descriptions and sources to more info (WIP/ partially done)
+* ~Possibly tab-closing and moving for both blocks~ (it would mean more js, so not adding it after all)
+* Settings import/export via json (possibly)
+* Reference to original sources in scripts, that have actually been copied and modified over (WIP)
 * Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization
 * ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~
 * Look for new optimization opportunities
@@ -44,3 +44,4 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Update translation files once descriptions are changed
 * Find proper info source for RSD
 * Find proper info source on Shortlink
+* ~JS handler for Heartbeat input~
