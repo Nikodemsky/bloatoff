@@ -30,18 +30,18 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Check how it works on multisite installations
 * Better descriptions and sources to more info (WIP/ partially done)
 * ~Possibly tab-closing and moving for both blocks~ (it would mean more js, so not adding it after all)
-* Settings import/export via json (possibly)
+* Possibly settings import/export via json
 * Reference to original sources in scripts, that have actually been copied and modified over (WIP)
 * Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization
-* ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~
-* Look for new optimization opportunities
-* ~Remove saved options on uninstall~
-* ~Add translations files~
+* ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~ (done)
+* Look for new optimization opportunities (WIP)
+* ~Remove saved options on uninstall~ (done)
+* ~Add translations files~ (done)
 * Add polish translation
-* ~Apply RSS feeds removal from header links~
+* ~Apply RSS feeds removal from header links~ (done)
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
 * Update translation files once descriptions are changed
 * Find proper info source for RSD
 * Find proper info source on Shortlink
-* ~JS handler for Heartbeat input~
+* ~JS handler for Heartbeat input~ (done)
