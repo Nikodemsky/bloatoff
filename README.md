@@ -2,7 +2,7 @@
 
 Pretty straight-forward tool, that provides easy-to-use controls to remove of bunch of native Wordpress bloatware, also contains few useful utilities for optimization.
 
-### Functionalities for version 0.9:
+### Functionalities for version 0.9.x:
 
 **Bloat**
 * Gutenberg styles removal
@@ -17,6 +17,8 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Native XML sitemap removal
 * Admin help tabs removal
 * About WP sub-menu and thank you message removal
+* Site Health disabling/removal (new in 0.9.4)
+* Import/Export page removal (new in 0.9.4)
 
 **Utilities**
 * Comments system removal
@@ -27,10 +29,10 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Heartbeat interval option
 
 **To do**
-* Check how it works on multisite installations
+* Full Multisite compability (work required, no ETA)
 * Better descriptions and sources to more info (WIP/ partially done)
-* ~Possibly tab-closing and moving for both blocks~ (it would mean more js, so not adding it after all)
-* Possibly settings import/export via json
+* ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, so not adding it after all)
+* Possibly settings import/export
 * Reference to original sources in scripts, that have actually been copied and modified over (WIP)
 * Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization
 * ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~ (done)
@@ -41,7 +43,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * ~Apply RSS feeds removal from header links~ (done)
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
-* Update translation files once descriptions are changed
-* Find proper info source for RSD
-* Find proper info source on Shortlink
+* Update translation files once descriptions are changed (WIP)
+* ~Find proper info source for RSD~ (done)
+* ~Find proper info source on Shortlink~ (done)
 * ~JS handler for Heartbeat input~ (done)
