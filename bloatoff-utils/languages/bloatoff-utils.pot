@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Bloat-off - bloat removal and utilities package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bloat-off - bloat removal and utilities 0.9\n"
+"Project-Id-Version: Bloat-off - bloat removal and utilities 0.9.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bloatoff-utils\n"
-"POT-Creation-Date: 2025-11-27 01:24:47+00:00\n"
+"POT-Creation-Date: 2025-11-27 22:29:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +39,7 @@ msgid "About ~117kb of savings, ~162kb if WooCommerce is active."
 msgstr ""
 
 #: admin/settings-page-output.php:36
-msgid "WARNING: IT MAY brake your site, if you're using theme based on Gutenberg blocks."
+msgid "WARNING: IT MAY brake your site, if you're using theme/plugin/module based on Gutenberg blocks."
 msgstr ""
 
 #: admin/settings-page-output.php:37
@@ -51,7 +51,7 @@ msgid "Site Health"
 msgstr ""
 
 #: admin/settings-page-output.php:44
-msgid "Since there's no safe way of completely removing Site Health module, without modifiying the core this functionality is limited to: 1. fatal error handler removal; 2. REST API endpoints removal; 3. disabling all scheduled checks; 4. disabling all initial tests; 5. disabling access to site-health.php page for all roles, including super-admins. Note: Site-health metabox, from dashboard is handled by \"Admin widgets in Dashboard\" option."
+msgid "Since there's no safe way of removing Site Health module completely from WP, without modifiying the core this functionality is limited to: 1. fatal error handler removal; 2. REST API endpoints removal; 3. disabling all scheduled checks; 4. disabling all initial tests; 5. disabling access to site-health.php page for all roles, including super-admins. Note: Site-health metabox, from dashboard is handled by \"Admin widgets in Dashboard\" option."
 msgstr ""
 
 #: admin/settings-page-output.php:46
@@ -243,58 +243,62 @@ msgid "Restrict oEmbed?"
 msgstr ""
 
 #: admin/settings-page-output.php:210
-msgid "XML-RPC"
-msgstr ""
-
-#: admin/settings-page-output.php:211
-msgid "May be required by some external apps/platforms, but otherwise should be switched off."
-msgstr ""
-
-#: admin/settings-page-output.php:214
-msgid "Disable XML-RPC?"
-msgstr ""
-
-#: admin/settings-page-output.php:220
 msgid "Self-pingbacks"
 msgstr ""
 
-#: admin/settings-page-output.php:221
+#: admin/settings-page-output.php:211
 msgid "Disables self-pingbacks, after new posts creation or on-site linking."
 msgstr ""
 
-#: admin/settings-page-output.php:224
+#: admin/settings-page-output.php:214
 msgid "Disable self-pingbacks?"
 msgstr ""
 
-#: admin/settings-page-output.php:230
+#: admin/settings-page-output.php:220
 msgid "WordPress Heartbeat API"
 msgstr ""
 
-#: admin/settings-page-output.php:231
+#: admin/settings-page-output.php:221
 msgid "The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues on functionalities, that heavily relies on Heartbeat API."
 msgstr ""
 
-#: admin/settings-page-output.php:232
+#: admin/settings-page-output.php:222
 msgid "Reduces server requests and CPU usage on both frontend and backend."
 msgstr ""
 
-#: admin/settings-page-output.php:234
+#: admin/settings-page-output.php:224
 msgid "Modify WordPress Heartbeat interval?"
 msgstr ""
 
-#: admin/settings-page-output.php:235
+#: admin/settings-page-output.php:225
 msgid "Interval (seconds):"
 msgstr ""
 
-#: admin/settings-page-output.php:240
+#: admin/settings-page-output.php:230
 msgid "Default: 15 seconds. Range: 1-86400 seconds (1 day)."
 msgstr ""
 
-#: admin/settings-page-output.php:241
+#: admin/settings-page-output.php:231
 msgid "WARNING: Be VERY careful, when changing that interval, it could brake some essential functionalities on your website."
 msgstr ""
 
-#: admin/settings-page-output.php:251
+#: admin/settings-page-output.php:237
+msgid "Image Processing engine"
+msgstr ""
+
+#: admin/settings-page-output.php:238
+msgid "WordPress is using Imagick by default, if available - this option forces usage of GD, which is generally faster. The downside is, that it supports a lot less image formats and image quality may drop."
+msgstr ""
+
+#: admin/settings-page-output.php:239
+msgid "WARNING: Since GD extension requires additional configuration for webp/avif formats, those may not be available to use, for plugins like ConvertX or even natively processed in media library."
+msgstr ""
+
+#: admin/settings-page-output.php:242
+msgid "Force GD Image Processing engine?"
+msgstr ""
+
+#: admin/settings-page-output.php:254
 msgid "Save Settings"
 msgstr ""
 

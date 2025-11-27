@@ -77,18 +77,7 @@ function bu_disable_oembed_on_site() {
     }
 }
 
-// #04 XML-RPC removal - https://wordpress.stackexchange.com/a/219666 + https://wordpress.stackexchange.com/a/416999
-function bu_disable_xmlrpc() {    
-    add_filter('xmlrpc_enabled', '__return_false');
-}
-
-// #04 XML-RPC removal - pingbacks
-function disable_x_pingback( $headers ) {
-    unset( $headers['X-Pingback'] );
-    return $headers;
-}
-
-// #05 Self pingbacks removal
+// #04 Self pingbacks removal
 function bu_no_self_ping( &$links ) {
     $home = get_option( 'home' );
     foreach ( $links as $l => $link )
@@ -96,7 +85,7 @@ function bu_no_self_ping( &$links ) {
             unset($links[$l]);
 }
 
-// #06 Heartbeat interval
+// #05 Heartbeat interval
 function bu_modify_heartbeat() {
     add_filter('heartbeat_settings', function($settings) use ($options) {
         $interval = isset($bloatoff_options['heartbeat_interval']) ? absint($bloatoff_options['heartbeat_interval']) : 15;
@@ -111,6 +100,14 @@ function bu_modify_heartbeat() {
         $settings['interval'] = $interval;
         return $settings;
     });
+}
+
+// #06 Image Process Engine
+function bou_image_editor_default_to_gd( $editors ) {
+    $gd_editor = 'WP_Image_Editor_GD';
+    $editors = array_diff( $editors, array( $gd_editor ) );
+    array_unshift( $editors, $gd_editor );
+    return $editors;
 }
 
 /** List of checks **/
@@ -130,19 +127,17 @@ if (!empty($bloatoff_options['oembed'])) {
     add_action( 'init', 'bu_disable_oembed_on_site' );
 }
 
-// #04 XML-RPC
-if (!empty($bloatoff_options['xmlrpc'])) {
-    add_action('init', 'bu_disable_xmlrpc');
-    add_filter('wp_headers', 'disable_x_pingback' );
-    add_filter('xmlrpc_methods', '__return_empty_array' );
-}
-
-// #05 Self pingbacks
+// #04 Self pingbacks
 if (!empty($bloatoff_options['selfping'])) {
     add_action( 'pre_ping', 'bu_no_self_ping' );
 }
 
-// #06 Heartbeat
+// #05 Heartbeat
 if (!empty($bloatoff_options['heartbeat_enabled'])) {
     add_action('init', 'bu_modify_heartbeat');
+}
+
+// #06 Image Process Engine
+if (!empty($bloatoff_options['ipe'])) {
+    add_filter( 'wp_image_editors', 'bou_image_editor_default_to_gd' );
 }

@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('This will remove all gutenberg-related css files from loading on the frontend.', 'bloatoff-utils'),
                 'savings' => __('About ~117kb of savings, ~162kb if WooCommerce is active.', 'bloatoff-utils'),
                 'setting_id' => 'gutenberg',
-                'warning' => __('WARNING: IT MAY brake your site, if you\'re using theme based on Gutenberg blocks.', 'bloatoff-utils'),
+                'warning' => __('WARNING: IT MAY brake your site, if you\'re using theme/plugin/module based on Gutenberg blocks.', 'bloatoff-utils'),
                 'label' => __('Remove Gutenberg styles?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -41,7 +41,7 @@ if (!defined('ABSPATH')) {
             // Site Health setting
             bu_render_settings_block(array(
                 'title' => __('Site Health', 'bloatoff-utils'),
-                'description' => __('Since there\'s no safe way of completely removing Site Health module, without modifiying the core this functionality is limited to: 1. fatal error handler removal; 2. REST API endpoints removal; 3. disabling all scheduled checks; 4. disabling all initial tests; 5. disabling access to site-health.php page for all roles, including super-admins. Note: Site-health metabox, from dashboard is handled by "Admin widgets in Dashboard" option.', 'bloatoff-utils'),
+                'description' => __('Since there\'s no safe way of removing Site Health module completely from WP, without modifiying the core this functionality is limited to: 1. fatal error handler removal; 2. REST API endpoints removal; 3. disabling all scheduled checks; 4. disabling all initial tests; 5. disabling access to site-health.php page for all roles, including super-admins. Note: Site-health metabox, from dashboard is handled by "Admin widgets in Dashboard" option.', 'bloatoff-utils'),
                 'setting_id' => 'wpsitehealth',
                 'warning' => __('WARNING: Some plugins may depend on that functionality; additionally your admin/super-admin/support might need access to site technical data; consider enabling this option carefuly.', 'bloatoff-utils'),
                 'label' => __('Disable Site Health?', 'bloatoff-utils'),
@@ -205,16 +205,6 @@ if (!defined('ABSPATH')) {
                 'options' => $options
             ));
 
-            // XMLRPC setting
-            bu_render_settings_block(array(
-                'title' => __('XML-RPC', 'bloatoff-utils'),
-                'description' => __('May be required by some external apps/platforms, but otherwise should be switched off.', 'bloatoff-utils'),
-                'setting_id' => 'xmlrpc',
-                'readmore' => 'https://codex.wordpress.org/XML-RPC_Support',
-                'label' => __('Disable XML-RPC?', 'bloatoff-utils'),
-                'options' => $options
-            ));
-
             // Self-pingbacks setting
             bu_render_settings_block(array(
                 'title' => __('Self-pingbacks', 'bloatoff-utils'),
@@ -242,11 +232,24 @@ if (!defined('ABSPATH')) {
                 'options' => $options
             ));
 
+            // Image processing engine
+            bu_render_settings_block(array(
+                'title' => __('Image Processing engine', 'bloatoff-utils'),
+                'description' => __('WordPress is using Imagick by default, if available - this option forces usage of GD, which is generally faster. The downside is, that it supports a lot less image formats and image quality may drop.', 'bloatoff-utils'),
+                'warning' => __('WARNING: Since GD extension requires additional configuration for webp/avif formats, those may not be available to use, for plugins like ConvertX or even natively processed in media library.', 'bloatoff-utils'),
+                'setting_id' => 'ipe',
+                'readmore' => 'https://github.com/WordPress/WordPress/blob/master/wp-includes/media.php#L4292',
+                'label' => __('Force GD Image Processing engine?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
             ?>
 
         </div>
 
     </div>
+
+    
 
     <?php submit_button(__('Save Settings', 'bloatoff-utils')); ?>
 </form>

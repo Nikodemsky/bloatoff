@@ -77,8 +77,8 @@ function bu_sanitize_settings($input) {
             'comments',
             'widgets',
             'oembed',
-            'xmlrpc',
             'selfping',
+            'ipe',
         ),
 
         'number' => array(
@@ -193,8 +193,10 @@ add_action('admin_enqueue_scripts', 'bu_enqueue_admin_styles');
  *     @type string $title       Summary title
  *     @type string $description Main description
  *     @type string $savings     Optional savings description (default: '')
+ *     @type string $warning     Optional warning description
  *     @type string $setting_id  Checkbox setting ID
  *     @type string $label       Checkbox label
+ *     @type string $readmore    Optional link to more information
  *     @type array  $options     Settings options array
  * }
  */
@@ -236,6 +238,8 @@ function bu_render_settings_block($args) {
  *     @type int    $number_max         Maximum number value (default: 999999)
  *     @type int    $number_default     Default number value (default: 1)
  *     @type string $number_description Description for the number input
+ *     @type string $readmore           Optional link to more information
+ *     @type string $warning            Optional warning description
  *     @type array  $options            Settings options array
  * }
  */
