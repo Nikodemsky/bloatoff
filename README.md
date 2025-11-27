@@ -12,7 +12,6 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Shortlink removal
 * REST Discovery link removal
 * oEmbed discovery link removal
-* ~jQuery migrate removal (legacy option)~
 * Admin widgets in dashboard removal
 * Native XML sitemap removal
 * Admin help tabs removal
@@ -24,7 +23,6 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Comments system removal
 * Widgets removal (those under "Appearance")
 * oEmbed restriction
-* ~XML-RPC removal (or more like switching-off)~
 * Self-pingbacks removal
 * Heartbeat interval option
 * Image Process Engine - force GD (new in 0.9.5)
@@ -35,7 +33,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, so not adding it after all)
 * Possibly settings import/export
 * Reference to original sources in scripts, that have actually been copied and modified over (WIP)
-* ~Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization~ (remove as of v0.9.5)
+* ~Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization~ (removed as of v0.9.5)
 * ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~ (done)
 * Look for new optimization opportunities (WIP)
 * ~Remove saved options on uninstall~ (done)
