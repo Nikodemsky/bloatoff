@@ -64,13 +64,14 @@ function bu_sanitize_settings($input) {
             'rss',
             'rsdl',
             'shortlink',
-            /*'jquerymigrate',*/
             'adminwidgets',
             'restapilink',
             'oembeddisclink',
             'nativexmlsitemap',
             'adminhelptabs',
             'wplogoty',
+            'wpsitehealth',
+            'importexport',
 
             // Utilities
             'comments',

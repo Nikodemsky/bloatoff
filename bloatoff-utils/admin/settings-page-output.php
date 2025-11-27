@@ -38,6 +38,16 @@ if (!defined('ABSPATH')) {
                 'options' => $options
             ));
 
+            // Site Health setting
+            bu_render_settings_block(array(
+                'title' => __('Site Health', 'bloatoff-utils'),
+                'description' => __('Since there\'s no safe way of completely removing Site Health module, without modifiying the core this functionality is limited to: 1. fatal error handler removal; 2. REST API endpoints removal; 3. disabling all scheduled checks; 4. disabling all initial tests; 5. disabling access to site-health.php page for all roles, including super-admins. Note: Site-health metabox, from dashboard is handled by "Admin widgets in Dashboard" option.', 'bloatoff-utils'),
+                'setting_id' => 'wpsitehealth',
+                'warning' => __('WARNING: Some plugins may depend on that functionality; additionally your admin/super-admin/support might need access to site technical data; consider enabling this option carefuly.', 'bloatoff-utils'),
+                'label' => __('Disable Site Health?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
             // Emojis setting
             bu_render_settings_block(array(
                 'title' => __('WordPress Emojis', 'bloatoff-utils'),
@@ -96,17 +106,6 @@ if (!defined('ABSPATH')) {
                 'options' => $options
             ));
 
-            // jQuery Migrate
-            /*bu_render_settings_block(array(
-                'title' => __('jQuery Migrate', 'bloatoff-utils'),
-                'description' => __('Tool for backward jQuery compability (It basically allows to preserve compability with jQuery versions prior to 1.9.), mostly redundant nowadays and disabled by default from WP versions 5.5.0 onwards; some plugins, scripts or modules might have kept it enabled.', 'bloatoff-utils'),
-                'savings' => __('About ~14kb of savings.'),
-                'setting_id' => 'jquerymigrate',
-                'readmore' => 'https://make.wordpress.org/core/2020/06/29/updating-jquery-version-shipped-with-wordpress/',
-                'label' => __('Remove jQuery Migrate script?', 'bloatoff-utils'),
-                'options' => $options
-            ));*/
-
             // Admin Widgets
             bu_render_settings_block(array(
                 'title' => __('Admin widgets in Dashboard', 'bloatoff-utils'),
@@ -143,6 +142,15 @@ if (!defined('ABSPATH')) {
                 'description' => __('This will remove "About Wordpress" sub-menu from top of admin menu and "Thank you" message at the bottom of footer area in admin panel.', 'bloatoff-utils'),
                 'setting_id' => 'wplogoty',
                 'label' => __('Disable WP sub-menu and thank you message?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
+            // Import/Export pages
+            bu_render_settings_block(array(
+                'title' => __('Import/Export Pages', 'bloatoff-utils'),
+                'description' => __('This will simply remove and restrict access to import/export pages from tools tab.', 'bloatoff-utils'),
+                'setting_id' => 'importexport',
+                'label' => __('Disable Import/Export pages?', 'bloatoff-utils'),
                 'options' => $options
             ));
 

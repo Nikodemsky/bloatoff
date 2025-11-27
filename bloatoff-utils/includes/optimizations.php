@@ -119,6 +119,67 @@ function bu_admin_bar_remove_logo() {
     add_filter( 'admin_footer_text', fn () => '', 99, 0 );
 }
 
+// #12 Disable Site Health - initial tests
+function disable_site_health_tests($tests) {
+    return [
+        'direct' => [],
+        'async'  => []
+    ];
+}
+
+// #12 Disable Site Health - scheduled checks
+function disable_site_health_scheduled_check() {
+    remove_action('wp_site_health_scheduled_check', 'wp_site_health_scheduled_check');
+    wp_clear_scheduled_hook('wp_site_health_scheduled_check');
+}
+
+// #12 Disable Site Health - REST API endpoints
+function disable_site_health_rest_endpoints($endpoints) {
+    foreach ($endpoints as $route => $endpoint) {
+        if (strpos($route, '/wp-site-health/') === 0) {
+            unset($endpoints[$route]);
+        }
+    }
+    return $endpoints;
+}
+
+// #12 Disable Site Health - menu pages
+function remove_site_health_menu_pages() {
+    remove_submenu_page('tools.php', 'site-health.php');
+    remove_submenu_page('tools.php', 'health-check');
+}
+
+// #12 Disable Site Health - capabilities
+function remove_site_health_capabilities($allcaps, $caps, $args, $user) {
+    if (isset($allcaps['view_site_health_checks'])) {
+        $allcaps['view_site_health_checks'] = false;
+    }
+    if (isset($allcaps['view_site_health_checks_major'])) {
+        $allcaps['view_site_health_checks_major'] = false;
+    }
+    return $allcaps;
+}
+
+// #13 Import/Export - menu pages
+function block_import_export_page_access() {
+    global $pagenow;
+    
+    // Block direct access to export.php
+    if ($pagenow === 'export.php') {
+        wp_die(__('Export functionality has been disabled.', 'bloatoff-utils'), __('Export Disabled', 'bloatoff-utils'), ['response' => 403]);
+    }
+    
+    // Block direct access to import.php
+    if ($pagenow === 'import.php') {
+        wp_die(__('Import functionality has been disabled.', 'bloatoff-utils'), __('Import Disabled', 'bloatoff-utils'), ['response' => 403]);
+    }
+}
+
+function remove_import_export_menu_pages() {
+    remove_submenu_page('tools.php', 'export.php');
+    remove_submenu_page('tools.php', 'import.php');
+}
+
 /** List of checks **/
 
 // #01 Gutenberg styles and scripts
@@ -176,4 +237,20 @@ if (!empty($bloatoff_options['adminhelptabs'])) {
 // #11 WP logo submenu and thank you message
 if (!empty($bloatoff_options['wplogoty'])) {
     add_action('wp_before_admin_bar_render','bu_admin_bar_remove_logo', 0 );
+}
+
+// #12 Site Health 
+if (!empty($bloatoff_options['wpsitehealth'])) {
+    add_filter('site_status_tests', 'disable_site_health_tests');
+    add_action('wp_loaded', 'disable_site_health_scheduled_check');
+    add_filter('rest_endpoints', 'disable_site_health_rest_endpoints');
+    add_filter('wp_fatal_error_handler_enabled', '__return_false');
+    add_action('admin_menu', 'remove_site_health_menu_pages', 1);
+    add_filter('user_has_cap', 'remove_site_health_capabilities', PHP_INT_MAX, 4);
+}
+
+// #13 Import/Export - menu pages
+if (!empty($bloatoff_options['importexport'])) {
+    add_action('admin_init', 'block_import_export_page_access', 1);
+    add_action('admin_menu', 'remove_import_export_menu_pages', 1);
 }
