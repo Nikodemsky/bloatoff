@@ -45,6 +45,7 @@ if (!defined('ABSPATH')) {
                 'setting_id' => 'wpsitehealth',
                 'warning' => __('WARNING: Some plugins may depend on that functionality; additionally your admin/super-admin/support might need access to site technical data; consider enabling this option carefuly.', 'bloatoff-utils'),
                 'label' => __('Disable Site Health?', 'bloatoff-utils'),
+                'readmore' => 'https://wordpress.org/documentation/article/site-health-screen/',
                 'options' => $options
             ));
 
@@ -75,6 +76,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('Removes RSD links from header; there\'s no need in having those, if you\'re not using services like Pingback or dedicated application requiring it.', 'bloatoff-utils'),
                 'setting_id' => 'rsdl',
                 'label' => __('Remove RSD?', 'bloatoff-utils'),
+                'readmore' => 'https://developer.wordpress.org/reference/functions/rsd_link/',
                 'options' => $options
             ));
 
@@ -84,6 +86,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('Removes shortlink to current post/page from header.', 'bloatoff-utils'),
                 'setting_id' => 'shortlink',
                 'label' => __('Remove shortlink?', 'bloatoff-utils'),
+                'readmore' => 'https://developer.wordpress.org/reference/functions/wp_shortlink_wp_head/',
                 'options' => $options
             ));
 
@@ -93,6 +96,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('Removes REST discovery link from head. Needed for specific uses/apps, otherwise not required.', 'bloatoff-utils'),
                 'setting_id' => 'restapilink',
                 'label' => __('Remove REST discovery link?', 'bloatoff-utils'),
+                'readmore' => 'https://developer.wordpress.org/reference/functions/rest_output_link_wp_head/',
                 'options' => $options
             ));
 
@@ -103,6 +107,7 @@ if (!defined('ABSPATH')) {
                 'warning' => __('WARNING: May cause issues, while fetching content on external, non-wp related services.', 'bloatoff-utils'),
                 'setting_id' => 'oembeddisclink',
                 'label' => __('Remove oEmbed discovery link?', 'bloatoff-utils'),
+                'readmore' => 'https://developer.wordpress.org/reference/functions/wp_oembed_add_discovery_links/',
                 'options' => $options
             ));
 
