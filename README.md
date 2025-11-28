@@ -26,6 +26,8 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Self-pingbacks removal
 * Heartbeat interval option
 * Image Process Engine - force GD (new in 0.9.5)
+* Limit number of revisions (new in 0.9.6)
+* Native tags taxonomy removal (new in 0.9.6)
 
 **To do**
 * Full Multisite compability (work required, no ETA)
