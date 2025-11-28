@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('This will remove all gutenberg-related css files from loading on the frontend.', 'bloatoff-utils'),
                 'savings' => __('About ~117kb of savings, ~162kb if WooCommerce is active.', 'bloatoff-utils'),
                 'setting_id' => 'gutenberg',
-                'warning' => __('WARNING: IT MAY brake your site, if you\'re using theme/plugin/module based on Gutenberg blocks.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s IT MAY brake your site, if you\'re using theme/plugin/module based on Gutenberg blocks.', 'bloatoff-utils'),
                 'label' => __('Remove Gutenberg styles?', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -41,9 +41,9 @@ if (!defined('ABSPATH')) {
             // Site Health setting
             bu_render_settings_block(array(
                 'title' => __('Site Health', 'bloatoff-utils'),
-                'description' => __('Since there\'s no safe way of removing Site Health module completely from WP, without modifiying the core this functionality is limited to: 1. fatal error handler removal; 2. REST API endpoints removal; 3. disabling all scheduled checks; 4. disabling all initial tests; 5. disabling access to site-health.php page for all roles, including super-admins. Note: Site-health metabox, from dashboard is handled by "Admin widgets in Dashboard" option.', 'bloatoff-utils'),
+                'description' => __('Since there\'s no safe way of removing Site Health module completely from WP, without modifiying the core this function is limited to:%3$s1. fatal error handler removal;%3$s2. REST API endpoints removal;%3$s3. disabling all scheduled checks;%3$s4. disabling all initial tests;%3$s5. disabling access to site-health.php page for all roles, including super-admins.%3$sNote: Site-health metabox, from dashboard is handled by "Admin widgets in Dashboard" option.', 'bloatoff-utils'),
                 'setting_id' => 'wpsitehealth',
-                'warning' => __('WARNING: Some plugins may depend on that functionality; additionally your admin/super-admin/support might need access to site technical data; consider enabling this option carefuly.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s Some plugins may depend on that functionality; additionally your admin/super-admin/support might need access to site technical data; consider enabling this option carefuly.', 'bloatoff-utils'),
                 'label' => __('Disable Site Health?', 'bloatoff-utils'),
                 'readmore' => 'https://wordpress.org/documentation/article/site-health-screen/',
                 'options' => $options
@@ -52,7 +52,7 @@ if (!defined('ABSPATH')) {
             // Emojis setting
             bu_render_settings_block(array(
                 'title' => __('WordPress Emojis', 'bloatoff-utils'),
-                'description' => __('This option will remove all the styles and scripts related to native Wordpress emoji module; be aware - it will also remove emojis from TinyMCE editor.', 'bloatoff-utils'),
+                'description' => __('This option will remove all the styles and scripts related to native Wordpress emoji module;%3$s be aware - it will also remove emojis from TinyMCE editor.', 'bloatoff-utils'),
                 'savings' => __('About ~20kb of savings + removal of CDN calls and stylesheets.'),
                 'setting_id' => 'emojis',
                 'readmore' => 'https://wordpress.org/documentation/wordpress-version/version-4-2/#emoji',
@@ -93,7 +93,7 @@ if (!defined('ABSPATH')) {
             // Rest API link
             bu_render_settings_block(array(
                 'title' => __('REST discovery link', 'bloatoff-utils'),
-                'description' => __('Removes REST discovery link from head. Needed for specific uses/apps, otherwise not required.', 'bloatoff-utils'),
+                'description' => __('Removes REST discovery link from head.%3$s Needed for specific uses/apps, otherwise not required.', 'bloatoff-utils'),
                 'setting_id' => 'restapilink',
                 'label' => __('Remove REST discovery link?', 'bloatoff-utils'),
                 'readmore' => 'https://developer.wordpress.org/reference/functions/rest_output_link_wp_head/',
@@ -103,8 +103,8 @@ if (!defined('ABSPATH')) {
             // oEmbed discovery link
             bu_render_settings_block(array(
                 'title' => __('oEmbed discovery link', 'bloatoff-utils'),
-                'description' => __('Removes oEmbed discovery link from header. Some external services may need it for creating fetch output.', 'bloatoff-utils'),
-                'warning' => __('WARNING: May cause issues, while fetching content on external, non-wp related services.', 'bloatoff-utils'),
+                'description' => __('Removes oEmbed discovery link from header.%3$s Some external services may need it for creating fetch output.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s May cause issues, while fetching content on external, non-wp related services.', 'bloatoff-utils'),
                 'setting_id' => 'oembeddisclink',
                 'label' => __('Remove oEmbed discovery link?', 'bloatoff-utils'),
                 'readmore' => 'https://developer.wordpress.org/reference/functions/wp_oembed_add_discovery_links/',
@@ -127,7 +127,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('Version 5.5.0 of Wordpress introduced native XML sitemaps, those are created by default via /wp-sitemap.xml; if you\'re using any SEO plugin with sitemap enabled, then this (native) functionality is redundant.', 'bloatoff-utils'),
                 'setting_id' => 'nativexmlsitemap',
                 'readmore' => 'https://wordpress.org/documentation/wordpress-version/version-5-5/#search',
-                'label' => __('Remove native XML Sitemap?', 'bloatoff-utils'),
+                'label' => __('Disable native XML Sitemap?', 'bloatoff-utils'),
                 'options' => $options
             ));
 
@@ -153,7 +153,7 @@ if (!defined('ABSPATH')) {
             // Import/Export pages
             bu_render_settings_block(array(
                 'title' => __('Import/Export Pages', 'bloatoff-utils'),
-                'description' => __('This will simply remove and restrict access to import/export pages from tools tab.', 'bloatoff-utils'),
+                'description' => __('This will simply remove and restrict access to import/export pages from Tools admin menu tab.', 'bloatoff-utils'),
                 'setting_id' => 'importexport',
                 'label' => __('Disable Import/Export pages?', 'bloatoff-utils'),
                 'options' => $options
@@ -180,6 +180,7 @@ if (!defined('ABSPATH')) {
             bu_render_settings_block(array(
                 'title' => __('Comments system removal', 'bloatoff-utils'),
                 'description' => __('It will disable comments system completely; also set proper redirections and removes admin pages for comment managament.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s If you\'re connected to external comment systems like Disqus via native comment support (for example, by installing official Disqus plugin), it will also remove/disable that connection.', 'bloatoff-utils'),
                 'setting_id' => 'comments',
                 'label' => __('Disable built-in Wordpress comment system?', 'bloatoff-utils'),
                 'options' => $options
@@ -188,7 +189,7 @@ if (!defined('ABSPATH')) {
             // Widgets setting
             bu_render_settings_block(array(
                 'title' => __('Widgets removal', 'bloatoff-utils'),
-                'description' => __('It will remove native widgets system (Appearance sub-menu).', 'bloatoff-utils'),
+                'description' => __('It will remove native widgets system (Appearance admin menu tab).', 'bloatoff-utils'),
                 'setting_id' => 'widgets',
                 'readmore' => 'https://wordpress.org/documentation/article/manage-wordpress-widgets/',
                 'label' => __('Remove widget support?', 'bloatoff-utils'),
@@ -228,7 +229,24 @@ if (!defined('ABSPATH')) {
                 'number_default' => 15,
                 'readmore' => 'https://developer.wordpress.org/plugins/javascript/heartbeat-api/',
                 'number_description' => __('Default: 15 seconds. Range: 1-86400 seconds (1 day).', 'bloatoff-utils'),
-                'warning' => __('WARNING: Be VERY careful, when changing that interval, it could brake some essential functionalities on your website.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s Be VERY careful, when changing that interval, it could brake some essential functionalities on your website.', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
+            // Global revisions
+            bu_render_number_block(array(
+                'title' => __('Revisions', 'bloatoff-utils'),
+                'description' => __('This option allows to change global number of revisions (including all post types, that actually supports revisions) per post/page. By default WordPress do not limit revisions number in any way and this usually makes database way bigger, than it should be - especially on content-heavy websites like blogs; this leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - revisions are disabled. %3$s %1$s1-999%2$s - revisions number for all posts type are limited to this number.%3$s Note: revisions WON\'T be removed right away, once this option is enabled - you need to update specific post/page, to have it\'s revisions removed.%3$s If you want to clear your installation off revisions globally, then try using plugins like "WP-Sweep" or "Optimize Database after Deleting Revisions"', 'bloatoff-utils'),
+                'savings' => __('Reduces load on database and it\'s size on the long run.', 'bloatoff-utils'),
+                'setting_id' => 'revisions',
+                'checkbox_label' => __('Modify global revisions number?', 'bloatoff-utils'),
+                'number_label' => __('Revisions:', 'bloatoff-utils'),
+                'number_min' => 0,
+                'number_max' => 999,
+                'number_default' => -1,
+                'readmore' => 'https://wordpress.org/documentation/article/revisions/',
+                'number_description' => __('Default: -1 (unlimited). Range: 1-999.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s This option is not designed to override specific post type capabilities - if it doesn\'t support revisions, then this option won\'t change it in any way.', 'bloatoff-utils'),
                 'options' => $options
             ));
 
@@ -236,10 +254,21 @@ if (!defined('ABSPATH')) {
             bu_render_settings_block(array(
                 'title' => __('Image Processing engine', 'bloatoff-utils'),
                 'description' => __('WordPress is using Imagick by default, if available - this option forces usage of GD, which is generally faster. The downside is, that it supports a lot less image formats and image quality may drop.', 'bloatoff-utils'),
-                'warning' => __('WARNING: Since GD extension requires additional configuration for webp/avif formats, those may not be available to use, for plugins like ConvertX or even natively processed in media library.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s Since GD PHP extension requires additional configuration for webp/avif formats, those may not be available to use, for plugins like CompressX or even natively processed in media library.', 'bloatoff-utils'),
                 'setting_id' => 'ipe',
                 'readmore' => 'https://github.com/WordPress/WordPress/blob/master/wp-includes/media.php#L4292',
                 'label' => __('Force GD Image Processing engine?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
+            // Tags taxonomy - default posts
+            bu_render_settings_block(array(
+                'title' => __('Tags taxonomy removal', 'bloatoff-utils'),
+                'description' => __('It will remove native tags taxonomy from default post type (Posts->Tags admin menu tab).%3$s Many non-blogs websites don\'t need those at all.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s If you have any tags indexed and at least some traffic comes through those - this option can affect your position at search engines like Google.', 'bloatoff-utils'),
+                'setting_id' => 'tagstax',
+                'readmore' => 'https://developer.wordpress.org/themes/classic-themes/basics/categories-tags-custom-taxonomies/#default-taxonomies',
+                'label' => __('Unregister default tags taxonomy?', 'bloatoff-utils'),
                 'options' => $options
             ));
 

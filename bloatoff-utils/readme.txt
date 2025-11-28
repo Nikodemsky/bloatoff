@@ -4,7 +4,7 @@ Tags: bloat, optimization, utilities, admin-panel
 Tested up to: 6.8.3
 Requires at least: 5.5
 Requires PHP: 7.4
-Stable tag: 0.9.5
+Stable tag: 0.9.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,7 +96,16 @@ Q. Will you consider adding import/export settings?
 A. It's on my to-do list, but there's no ETA.
 
 Q. Regarding Image Process Engine - how do i check which engine i use?
-A. The easiest way would be to check the "Media handling" tab in the Site Health tool. In most cases you'll see active used Image Process Engine.
+A. The easiest way would be to check the "Media handling" tab in the Site Health tool. In most cases you'll see active used Image Process Engine along with more detailed information.
+
+Q. Will the old revisions gonna be removed right away after limiting it's number globally?
+A. No. You need to update each post/page to have it's revisions removed.
+
+Q. Why there's no option to remove old revisions by batch?
+A. Adding such option would need to take into consideration many things - like installations with very limited system resources or thousands of records to clean, to be completely honest it's something, that I consider outside of the plugin functionality scope. Please try using plugins like "WP-sweep" or "Optimize Database after Deleting Revisions" if needed.
+
+Q. Does removing "tags" taxonomy will affect my position at search engines like Google or Bing?
+A. Only if you have actually any tags created and those are indexed, then it possibly may.
 
 Q. I need help, something doesn't work!
 A. If it's related to the Bloat-off plugin, then please create new thread on the Wordpress support forums and provide as much information, as possible regarding the issue.
@@ -106,7 +115,15 @@ A. No, all the options saved in database are cleared upon plugin removal.
 
 ## Changelog ##
 
-v.0.9.5
+v0.9.6
+* Extended descriptions to allow sanitized translations with <br>, <strong> and </strong> html tags
+* Additional styling to descriptions, for better readability
+* New utility added - limit number of revisions
+* New utility added - native tags taxonomy removal
+* Updated form handler in js, to work with number of options
+* Updated some of the descriptions to be more substantial
+
+v0.9.5
 * Core version bump
 * Options page settings args update (admin/settings-page.php)
 * Gutenberg Warning info update
@@ -116,28 +133,28 @@ v.0.9.5
 * Added readme.txt file (WIP)
 * Updated translation file
 
-v.0.9.4
-* Refactored utilities/optimizations code, for better scalability
-* Added two new functions: Site Health and Import/Export removal
-* Added link to Site Health
-* Added link to RSD
-* Added link to Shortlink
-* Added link to REST discovery
-* Added link to oEmbed discovery
-* Updated translation file
-* Removed code related to jQuery from the source
+v0.9.4
+* Refactored utilities/optimizations code, for better scalability.
+* Added two new functions: Site Health and Import/Export removal.
+* Added link to Site Health.
+* Added link to RSD.
+* Added link to Shortlink.
+* Added link to REST discovery.
+* Added link to oEmbed discovery.
+* Updated translation file.
+* Removed code related to jQuery migrate from the source
 
-v.0.9.3
-* Added tooltips to question markings
-* Added more info link to native Wordpress widgets removal utility
-* Added more info link to Heartbeat API utility
-* Changed Description on Heartbeat API utility
-* Added more info link to oEmbed utility
-* Added more info link to Admin help tabs removal
-* For now, commented-out option to remove jQuery migrate; it's really rare to see it used anywhere nowadays
-* Added more info link to WP Emoji removal
-* Added more info link to RSS Feeds removal
-* Added more info link to Dashboard Widgets removal
+v0.9.3
+* Added tooltips to question markings.
+* Added more info link to native Wordpress widgets removal utility.
+* Added more info link to Heartbeat API utility.
+* Changed Description on Heartbeat API utility.
+* Added more info link to oEmbed utility.
+* Added more info link to Admin help tabs removal.
+* For now, commented-out option to remove jQuery migrate; it's really rare to see it used anywhere nowadays.
+* Added more info link to WP Emoji removal.
+* Added more info link to RSS Feeds removal.
+* Added more info link to Dashboard Widgets removal.
 
 v0.9.2
 * New functionalities

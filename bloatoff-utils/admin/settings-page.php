@@ -79,10 +79,12 @@ function bu_sanitize_settings($input) {
             'oembed',
             'selfping',
             'ipe',
+            'tagstax',
         ),
 
         'number' => array(
             'heartbeat' => array('min' => 1, 'max' => 86400, 'default' => 15),
+            'revisions' => array('min' => 0, 'max' => 999, 'default' => -1),
         ),
     );
     
@@ -191,7 +193,7 @@ add_action('admin_enqueue_scripts', 'bu_enqueue_admin_styles');
  * 
  * @param array $args {
  *     @type string $title       Summary title
- *     @type string $description Main description
+ *     @type string $description Extensive description allowing <br> and <strong></strong> html elements
  *     @type string $savings     Optional savings description (default: '')
  *     @type string $warning     Optional warning description
  *     @type string $setting_id  Checkbox setting ID
@@ -229,7 +231,7 @@ function bu_render_settings_block($args) {
  * 
  * @param array $args {
  *     @type string $title              Summary title
- *     @type string $description        Main description
+ *     @type string $description        Extensive description allowing <br> and <strong></strong> html elements
  *     @type string $savings            Optional savings description (default: '')
  *     @type string $setting_id         Setting ID (e.g., 'heartbeat', 'autosave')
  *     @type string $checkbox_label     Checkbox label text
@@ -270,4 +272,12 @@ function bu_render_number_block($args) {
     
     // Load template
     require BLOATOFF_PLUGIN_DIR . 'admin/partials/settings-block-number.php';
+}
+
+// Helper function for extensive instructions sanitization inside translations
+function bou_ext_txt( $text ) {
+    return wp_kses( $text, array(
+        'br'     => array(),
+        'strong' => array(),
+    ) );
 }

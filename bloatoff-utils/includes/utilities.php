@@ -88,7 +88,7 @@ function bu_no_self_ping( &$links ) {
 // #05 Heartbeat interval
 function bu_modify_heartbeat() {
     add_filter('heartbeat_settings', function($settings) use ($options) {
-        $interval = isset($bloatoff_options['heartbeat_interval']) ? absint($bloatoff_options['heartbeat_interval']) : 15;
+        $interval = isset($bloatoff_options['heartbeat_number']) ? absint($bloatoff_options['heartbeat_number']) : 15;
         
         // Ensure interval is within valid range
         if ($interval < 1) {
@@ -102,12 +102,32 @@ function bu_modify_heartbeat() {
     });
 }
 
-// #06 Image Process Engine
+// #06 Revisions
+function bu_limit_post_revisions( $num, $post ) {
+    $bloatoff_options = get_option('bloatoff_settings', array());
+    $revisions = isset($bloatoff_options['revisions_interval']) ? absint($bloatoff_options['revisions_interval']) : -1;
+
+    // Ensure revisions number is within valid range
+    if ($revisions < 1) {
+        $revisions = 1;
+    } elseif ($revisions > 999) {
+        $revisions = 999;
+    }
+    
+    return $revisions; // Return the number, not $settings
+}
+
+// #07 Image Process Engine
 function bou_image_editor_default_to_gd( $editors ) {
     $gd_editor = 'WP_Image_Editor_GD';
     $editors = array_diff( $editors, array( $gd_editor ) );
     array_unshift( $editors, $gd_editor );
     return $editors;
+}
+
+// #08 Default tags taxonomy
+function bou_unregister_default_tags_taxonomy() {
+    unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 
 /** List of checks **/
@@ -137,7 +157,17 @@ if (!empty($bloatoff_options['heartbeat_enabled'])) {
     add_action('init', 'bu_modify_heartbeat');
 }
 
-// #06 Image Process Engine
+// #06 Revisions
+if (!empty($bloatoff_options['revisions_enabled'])) {
+    add_filter( 'wp_revisions_to_keep', 'bu_limit_post_revisions', 99, 2 ); // 2 arguments, not 999
+}
+
+// #07 Image Process Engine
 if (!empty($bloatoff_options['ipe'])) {
     add_filter( 'wp_image_editors', 'bou_image_editor_default_to_gd' );
+}
+
+// #08 Default tags taxonomy
+if (!empty($bloatoff_options['tagstax'])) {
+    add_action('init', 'bou_unregister_default_tags_taxonomy');
 }

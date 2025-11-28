@@ -29,19 +29,33 @@ if (!defined('ABSPATH')) {
             <?php if (!empty($warning)): echo '<span class="bou-warning-asterisk">*</span>'; endif; ?>
         </summary>
         <aside>
-            <p>
-                <span class="description"><?php echo esc_html($description); ?></span>
-                <?php if (!empty($savings)): ?>
-                    <br>
-                    <span class="description bou-savings"><?php echo esc_html($savings); ?></span>
+            <p> 
+                <?php if (!empty($description)): // Description or extensive instructions ?>
+                    <span class="description extensive-instructions">
+                        <?php echo bou_ext_txt( sprintf( $description, '<strong>', '</strong>', '<br>' )); ?>
+                    </span>
                 <?php endif; ?>
-                <?php if (!empty($warning)): ?>
+                <?php if (!empty($savings)): // Savings - green font ?>
                     <br>
-                    <span class="description bou-warning"><?php echo esc_html($warning); ?></span>
+                    <span class="description bou-savings">
+                        <?php echo bou_ext_txt( sprintf( $savings, '<strong>', '</strong>', '<br>' )); ?>
+                    </span>
                 <?php endif; ?>
-                <?php if (!empty($readmore)): ?>
+                <?php if (!empty($warning)): // Warning - red font ?>
                     <br>
-                    <span class="description bou-readmore"><a href="<?php echo esc_url($readmore); ?>" rel="nofollow external" target="_blank">[<?php esc_html_e( 'Read more', 'bloatoff-utils' ); ?>]</a></span>
+                    <span class="description bou-warning">
+                        <?php echo bou_ext_txt( sprintf( $warning, '<strong>', '</strong>', '<br>' )); ?>
+                    </span>
+                <?php endif; ?>
+                <?php if (!empty($readmore)): // Read more link ?>
+                    <br>
+                    <span class="description bou-readmore">
+                        <a 
+                            href="<?php echo esc_url($readmore); ?>" 
+                            rel="nofollow external" 
+                            target="_blank">[<?php esc_html_e( 'Read more', 'bloatoff-utils' ); ?>]
+                        </a>
+                    </span>
                 <?php endif; ?>
             </p>
         </aside>
