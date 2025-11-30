@@ -30,20 +30,21 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Native tags taxonomy removal (new in 0.9.6)
 
 **To do**
-* Full Multisite compability (work required, no ETA)
-* Better descriptions and sources to more info (WIP/ partially done)
 * ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, so not adding it after all)
-* Possibly settings import/export
 * ~Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization~ (removed as of v0.9.5)
 * ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~ (done)
-* Look for new optimization opportunities (WIP)
 * ~Remove saved options on uninstall~ (done)
 * ~Add translations files~ (done)
-* Add polish translation
 * ~Apply RSS feeds removal from header links~ (done)
-* Find better info source for self-pingbacks
-* Find proper info source for gutenberg styles
-* Update translation files once descriptions are changed (WIP)
 * ~Find proper info source for RSD~ (done)
 * ~Find proper info source on Shortlink~ (done)
 * ~JS handler for Heartbeat input~ (done)
+* Full Multisite compability (work required, no ETA)
+* Better descriptions and sources to more info (WIP/ partially done)
+* Possibly settings import/export
+* Look for new optimization opportunities (WIP)
+* Find better info source for self-pingbacks
+* Find proper info source for gutenberg styles
+* Add polish translation
+* Check whether on-site search disabling is worth adding as utility
+* Check whether disabling author archives is worth adding as utility or bloat removal
