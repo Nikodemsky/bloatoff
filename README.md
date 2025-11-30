@@ -30,7 +30,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Native tags taxonomy removal (new in 0.9.6)
 
 **To do**
-* ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, so not adding it after all)
+* ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, scrapping the idea for now)
 * ~Think about the XML-RPC option, whether it should stick or not - it's security thing, rather than anything related to actual optimization~ (removed as of v0.9.5)
 * ~Possibly tooltip telling to actually click on [?] next to the name of the function, or maybe information somewhere, that click is actually required to see full description of functionality (it uses native details/summary html elements)~ (done)
 * ~Remove saved options on uninstall~ (done)
