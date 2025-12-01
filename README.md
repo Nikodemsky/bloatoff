@@ -47,5 +47,4 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
 * Add polish translation
-
 * Check whether disabling author archives is worth adding as utility or bloat removal
