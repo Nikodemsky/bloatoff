@@ -28,6 +28,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Image Process Engine - force GD (new in 0.9.5)
 * Limit number of revisions (new in 0.9.6)
 * Native tags taxonomy removal (new in 0.9.6)
+* Option to disable authors archive pages (new in 0.9.7)
 
 **To do**
 * ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, scrapping the idea for now)
@@ -40,6 +41,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * ~Find proper info source on Shortlink~ (done)
 * ~JS handler for Heartbeat input~ (done)
 * ~Check whether on-site search disabling is worth adding as utility~ (after analyzing the case it doesn't seems like disabling it make any difference, if there's no call for search form on the frontend; this function would seems like novelty, rather than anything meaningful)
+* ~Check whether disabling author archives is worth adding as utility or bloat removal~ (done, added in 0.9.7)
 * Full Multisite compability (work required, no ETA)
 * Better descriptions and sources to more info (WIP/ partially done)
 * Possibly settings import/export
@@ -47,4 +49,3 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
 * Add polish translation
-* Check whether disabling author archives is worth adding as utility or bloat removal
