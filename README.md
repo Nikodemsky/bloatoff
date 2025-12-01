@@ -39,6 +39,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * ~Find proper info source for RSD~ (done)
 * ~Find proper info source on Shortlink~ (done)
 * ~JS handler for Heartbeat input~ (done)
+* ~Check whether on-site search disabling is worth adding as utility~ (after analyzing the case it doesn't seems like disabling it make any difference, if there's no call for search form on the frontend; this function would seems like novelty, rather than anything meaningful)
 * Full Multisite compability (work required, no ETA)
 * Better descriptions and sources to more info (WIP/ partially done)
 * Possibly settings import/export
@@ -46,5 +47,5 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
 * Add polish translation
-* Check whether on-site search disabling is worth adding as utility
+
 * Check whether disabling author archives is worth adding as utility or bloat removal
