@@ -110,8 +110,8 @@ function bu_limit_post_revisions( $num, $post ) {
     // Ensure revisions number is within valid range
     if ($revisions < 1) {
         $revisions = 1;
-    } elseif ($revisions > 999) {
-        $revisions = 999;
+    } elseif ($revisions > 99) {
+        $revisions = 99;
     }
     
     return $revisions; // Return the number, not $settings
@@ -128,6 +128,19 @@ function bou_image_editor_default_to_gd( $editors ) {
 // #08 Default tags taxonomy
 function bou_unregister_default_tags_taxonomy() {
     unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+
+// #09 Author archive pages
+function bou_disable_author_archives() {
+    if ( is_author() ) {
+        wp_redirect( home_url(), 301 );
+        exit;
+    }
+}
+
+function bou_remove_users_sitemap_provider( $providers ) {
+    unset( $providers['users'] );
+    return $providers;
 }
 
 /** List of checks **/
@@ -159,7 +172,7 @@ if (!empty($bloatoff_options['heartbeat_enabled'])) {
 
 // #06 Revisions
 if (!empty($bloatoff_options['revisions_enabled'])) {
-    add_filter( 'wp_revisions_to_keep', 'bu_limit_post_revisions', 99, 2 ); // 2 arguments, not 999
+    add_filter( 'wp_revisions_to_keep', 'bu_limit_post_revisions', 99, 2 );
 }
 
 // #07 Image Process Engine
@@ -170,4 +183,12 @@ if (!empty($bloatoff_options['ipe'])) {
 // #08 Default tags taxonomy
 if (!empty($bloatoff_options['tagstax'])) {
     add_action('init', 'bou_unregister_default_tags_taxonomy');
+}
+
+// #09 Author archive pages
+if (!empty($bloatoff_options['authorarchives'])) {
+    add_action( 'template_redirect', 'bou_disable_author_archives', 1 );
+    add_filter( 'wp_sitemaps_register_providers', 'bou_remove_users_sitemap_provider' );
+    add_filter( 'author_link', '__return_empty_string' );
+    add_filter( 'the_author_posts_link', 'get_the_author', 99 );
 }

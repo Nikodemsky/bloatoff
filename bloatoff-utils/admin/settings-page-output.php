@@ -216,40 +216,6 @@ if (!defined('ABSPATH')) {
                 'options' => $options
             ));
 
-            // Heartbeat
-            bu_render_number_block(array(
-                'title' => __('WordPress Heartbeat API', 'bloatoff-utils'),
-                'description' => __('The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues on functionalities, that heavily relies on Heartbeat API.', 'bloatoff-utils'),
-                'savings' => __('Reduces server requests and CPU usage on both frontend and backend.', 'bloatoff-utils'),
-                'setting_id' => 'heartbeat',
-                'checkbox_label' => __('Modify WordPress Heartbeat interval?', 'bloatoff-utils'),
-                'number_label' => __('Interval (seconds):', 'bloatoff-utils'),
-                'number_min' => 1,
-                'number_max' => 86400,
-                'number_default' => 15,
-                'readmore' => 'https://developer.wordpress.org/plugins/javascript/heartbeat-api/',
-                'number_description' => __('Default: 15 seconds. Range: 1-86400 seconds (1 day).', 'bloatoff-utils'),
-                'warning' => __('%1$sWARNING:%2$s Be VERY careful, when changing that interval, it could brake some essential functionalities on your website.', 'bloatoff-utils'),
-                'options' => $options
-            ));
-
-            // Global revisions
-            bu_render_number_block(array(
-                'title' => __('Revisions', 'bloatoff-utils'),
-                'description' => __('This option allows to change global number of revisions (including all post types, that actually supports revisions) per post/page. By default WordPress do not limit revisions number in any way and this usually makes database way bigger, than it should be - especially on content-heavy websites like blogs; this leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - revisions are disabled. %3$s %1$s1-999%2$s - revisions number for all posts type are limited to this number.%3$s Note: revisions WON\'T be removed right away, once this option is enabled - you need to update specific post/page, to have it\'s revisions removed.%3$s If you want to clear your installation off revisions globally, then try using plugins like "WP-Sweep" or "Optimize Database after Deleting Revisions"', 'bloatoff-utils'),
-                'savings' => __('Reduces load on database and it\'s size on the long run.', 'bloatoff-utils'),
-                'setting_id' => 'revisions',
-                'checkbox_label' => __('Modify global revisions number?', 'bloatoff-utils'),
-                'number_label' => __('Revisions:', 'bloatoff-utils'),
-                'number_min' => 0,
-                'number_max' => 999,
-                'number_default' => -1,
-                'readmore' => 'https://wordpress.org/documentation/article/revisions/',
-                'number_description' => __('Default: -1 (unlimited). Range: 1-999.', 'bloatoff-utils'),
-                'warning' => __('%1$sWARNING:%2$s This option is not designed to override specific post type capabilities - if it doesn\'t support revisions, then this option won\'t change it in any way.', 'bloatoff-utils'),
-                'options' => $options
-            ));
-
             // Image processing engine
             bu_render_settings_block(array(
                 'title' => __('Image Processing engine', 'bloatoff-utils'),
@@ -269,6 +235,51 @@ if (!defined('ABSPATH')) {
                 'setting_id' => 'tagstax',
                 'readmore' => 'https://developer.wordpress.org/themes/classic-themes/basics/categories-tags-custom-taxonomies/#default-taxonomies',
                 'label' => __('Unregister default tags taxonomy?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
+            // Author archives
+            bu_render_settings_block(array(
+                'title' => __('Author archives', 'bloatoff-utils'),
+                'description' => __('Authors archive pages can be considered redundant on installations, where posts are not categorized by WP users (as authors). %3$s Since author archives are part of WP Core and can\'t be "removed" per se, this function is limited to:%3$s 1. redirection of any author archive page queries to homepage (301 redirect); %3$s 2. removal of any author\'s links from functions like author_link\the_author_posts_link; %3$s 3. removal of author\'s from native sitemaps (if it\'s actively used). %3$s Note: Most of the times, author\'s archives indexation or handling can be configured in settings of most of the popular SEO plugins. ', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s If you have any author pages indexed and those are considered vital for your website blog categorization - this option can affect your position at search engines like Google.', 'bloatoff-utils'),
+                'setting_id' => 'authorarchives',
+                'readmore' => 'https://codex.wordpress.org/Author_Templates',
+                'label' => __('Disable author archives?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
+            // Heartbeat
+            bu_render_number_block(array(
+                'title' => __('WordPress Heartbeat API', 'bloatoff-utils'),
+                'description' => __('The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues on functionalities, that heavily relies on Heartbeat API.', 'bloatoff-utils'),
+                'savings' => __('Reduces server requests and CPU usage on both frontend and backend.', 'bloatoff-utils'),
+                'setting_id' => 'heartbeat',
+                'checkbox_label' => __('Modify WordPress Heartbeat interval?', 'bloatoff-utils'),
+                'number_label' => __('Interval (seconds):', 'bloatoff-utils'),
+                'number_min' => 1,
+                'number_max' => 3600,
+                'number_default' => 15,
+                'readmore' => 'https://developer.wordpress.org/plugins/javascript/heartbeat-api/',
+                'number_description' => __('Default: 15 seconds. Range: 1-3600 seconds (1 hour).', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s Be VERY careful, when changing that interval, it could brake some essential functionalities on your website.', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
+            // Global revisions
+            bu_render_number_block(array(
+                'title' => __('Revisions', 'bloatoff-utils'),
+                'description' => __('This option allows to change global number of revisions (including all post types, that actually supports revisions) per post/page. By default WordPress do not limit revisions number in any way and this usually makes database way bigger, than it should be - especially on content-heavy websites like blogs; this leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - revisions are disabled. %3$s %1$s1-999%2$s - revisions number for all posts type are limited to this number.%3$s Note: revisions WON\'T be removed right away, once this option is enabled - you need to update specific post/page, to have it\'s revisions removed.%3$s If you want to clear your installation off revisions globally, then try using plugins like "WP-Sweep" or "Optimize Database after Deleting Revisions"', 'bloatoff-utils'),
+                'savings' => __('Reduces load on database and it\'s size on the long run.', 'bloatoff-utils'),
+                'setting_id' => 'revisions',
+                'checkbox_label' => __('Modify global revisions number?', 'bloatoff-utils'),
+                'number_label' => __('Revisions:', 'bloatoff-utils'),
+                'number_min' => 0,
+                'number_max' => 99,
+                'number_default' => -1,
+                'readmore' => 'https://wordpress.org/documentation/article/revisions/',
+                'number_description' => __('Default: -1 (unlimited). Range: 1-99.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s This option is not designed to override specific post type capabilities - if it doesn\'t support revisions, then this option won\'t change it in any way.', 'bloatoff-utils'),
                 'options' => $options
             ));
 

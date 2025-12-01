@@ -80,11 +80,12 @@ function bu_sanitize_settings($input) {
             'selfping',
             'ipe',
             'tagstax',
+            'authorarchives',
         ),
 
         'number' => array(
-            'heartbeat' => array('min' => 1, 'max' => 86400, 'default' => 15),
-            'revisions' => array('min' => 0, 'max' => 999, 'default' => -1),
+            'heartbeat' => array('min' => 1, 'max' => 3600, 'default' => 15),
+            'revisions' => array('min' => 0, 'max' => 99, 'default' => -1),
         ),
     );
     

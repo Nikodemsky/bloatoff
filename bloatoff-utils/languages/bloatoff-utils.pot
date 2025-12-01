@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Bloat-off - bloat removal and utilities package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bloat-off - bloat removal and utilities 0.9.6\n"
+"Project-Id-Version: Bloat-off - bloat removal and utilities 0.9.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bloatoff-utils\n"
-"POT-Creation-Date: 2025-11-28 23:34:17+00:00\n"
+"POT-Creation-Date: 2025-12-01 01:32:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -259,98 +259,114 @@ msgid "Disable self-pingbacks?"
 msgstr ""
 
 #: admin/settings-page-output.php:221
-msgid "WordPress Heartbeat API"
-msgstr ""
-
-#: admin/settings-page-output.php:222
-msgid "The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues on functionalities, that heavily relies on Heartbeat API."
-msgstr ""
-
-#: admin/settings-page-output.php:223
-msgid "Reduces server requests and CPU usage on both frontend and backend."
-msgstr ""
-
-#: admin/settings-page-output.php:225
-msgid "Modify WordPress Heartbeat interval?"
-msgstr ""
-
-#: admin/settings-page-output.php:226
-msgid "Interval (seconds):"
-msgstr ""
-
-#: admin/settings-page-output.php:231
-msgid "Default: 15 seconds. Range: 1-86400 seconds (1 day)."
-msgstr ""
-
-#: admin/settings-page-output.php:232
-msgid "%1$sWARNING:%2$s Be VERY careful, when changing that interval, it could brake some essential functionalities on your website."
-msgstr ""
-
-#: admin/settings-page-output.php:238
-msgid "Revisions"
-msgstr ""
-
-#: admin/settings-page-output.php:239
-msgid "This option allows to change global number of revisions (including all post types, that actually supports revisions) per post/page. By default WordPress do not limit revisions number in any way and this usually makes database way bigger, than it should be - especially on content-heavy websites like blogs; this leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - revisions are disabled. %3$s %1$s1-999%2$s - revisions number for all posts type are limited to this number.%3$s Note: revisions WON'T be removed right away, once this option is enabled - you need to update specific post/page, to have it's revisions removed.%3$s If you want to clear your installation off revisions globally, then try using plugins like \"WP-Sweep\" or \"Optimize Database after Deleting Revisions\""
-msgstr ""
-
-#: admin/settings-page-output.php:240
-msgid "Reduces load on database and it's size on the long run."
-msgstr ""
-
-#: admin/settings-page-output.php:242
-msgid "Modify global revisions number?"
-msgstr ""
-
-#: admin/settings-page-output.php:243
-msgid "Revisions:"
-msgstr ""
-
-#: admin/settings-page-output.php:248
-msgid "Default: -1 (unlimited). Range: 1-999."
-msgstr ""
-
-#: admin/settings-page-output.php:249
-msgid "%1$sWARNING:%2$s This option is not designed to override specific post type capabilities - if it doesn't support revisions, then this option won't change it in any way."
-msgstr ""
-
-#: admin/settings-page-output.php:255
 msgid "Image Processing engine"
 msgstr ""
 
-#: admin/settings-page-output.php:256
+#: admin/settings-page-output.php:222
 msgid "WordPress is using Imagick by default, if available - this option forces usage of GD, which is generally faster. The downside is, that it supports a lot less image formats and image quality may drop."
 msgstr ""
 
-#: admin/settings-page-output.php:257
+#: admin/settings-page-output.php:223
 msgid "%1$sWARNING:%2$s Since GD PHP extension requires additional configuration for webp/avif formats, those may not be available to use, for plugins like CompressX or even natively processed in media library."
 msgstr ""
 
-#: admin/settings-page-output.php:260
+#: admin/settings-page-output.php:226
 msgid "Force GD Image Processing engine?"
 msgstr ""
 
-#: admin/settings-page-output.php:266
+#: admin/settings-page-output.php:232
 msgid "Tags taxonomy removal"
 msgstr ""
 
-#: admin/settings-page-output.php:267
+#: admin/settings-page-output.php:233
 msgid "It will remove native tags taxonomy from default post type (Posts->Tags admin menu tab).%3$s Many non-blogs websites don't need those at all."
 msgstr ""
 
-#: admin/settings-page-output.php:268
+#: admin/settings-page-output.php:234
 msgid "%1$sWARNING:%2$s If you have any tags indexed and at least some traffic comes through those - this option can affect your position at search engines like Google."
 msgstr ""
 
-#: admin/settings-page-output.php:271
+#: admin/settings-page-output.php:237
 msgid "Unregister default tags taxonomy?"
 msgstr ""
 
-#: admin/settings-page-output.php:283
+#: admin/settings-page-output.php:243
+msgid "Author archives"
+msgstr ""
+
+#: admin/settings-page-output.php:244
+msgid "Authors archive pages can be considered redundant on installations, where posts are not categorized by WP users (as authors). %3$s Since author archives are part of WP Core and can't be \"removed\" per se, this function is limited to:%3$s 1. redirection of any author archive page queries to homepage (301 redirect); %3$s 2. removal of any author's links from functions like author_link\\the_author_posts_link; %3$s 3. removal of author's from native sitemaps (if it's actively used). %3$s Note: Most of the times, author's archives indexation or handling can be configured in settings of most of the popular SEO plugins. "
+msgstr ""
+
+#: admin/settings-page-output.php:245
+msgid "%1$sWARNING:%2$s If you have any author pages indexed and those are considered vital for your website blog categorization - this option can affect your position at search engines like Google."
+msgstr ""
+
+#: admin/settings-page-output.php:248
+msgid "Disable author archives?"
+msgstr ""
+
+#: admin/settings-page-output.php:254
+msgid "WordPress Heartbeat API"
+msgstr ""
+
+#: admin/settings-page-output.php:255
+msgid "The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues on functionalities, that heavily relies on Heartbeat API."
+msgstr ""
+
+#: admin/settings-page-output.php:256
+msgid "Reduces server requests and CPU usage on both frontend and backend."
+msgstr ""
+
+#: admin/settings-page-output.php:258
+msgid "Modify WordPress Heartbeat interval?"
+msgstr ""
+
+#: admin/settings-page-output.php:259
+msgid "Interval (seconds):"
+msgstr ""
+
+#: admin/settings-page-output.php:264
+msgid "Default: 15 seconds. Range: 1-3600 seconds (1 hour)."
+msgstr ""
+
+#: admin/settings-page-output.php:265
+msgid "%1$sWARNING:%2$s Be VERY careful, when changing that interval, it could brake some essential functionalities on your website."
+msgstr ""
+
+#: admin/settings-page-output.php:271
+msgid "Revisions"
+msgstr ""
+
+#: admin/settings-page-output.php:272
+msgid "This option allows to change global number of revisions (including all post types, that actually supports revisions) per post/page. By default WordPress do not limit revisions number in any way and this usually makes database way bigger, than it should be - especially on content-heavy websites like blogs; this leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - revisions are disabled. %3$s %1$s1-999%2$s - revisions number for all posts type are limited to this number.%3$s Note: revisions WON'T be removed right away, once this option is enabled - you need to update specific post/page, to have it's revisions removed.%3$s If you want to clear your installation off revisions globally, then try using plugins like \"WP-Sweep\" or \"Optimize Database after Deleting Revisions\""
+msgstr ""
+
+#: admin/settings-page-output.php:273
+msgid "Reduces load on database and it's size on the long run."
+msgstr ""
+
+#: admin/settings-page-output.php:275
+msgid "Modify global revisions number?"
+msgstr ""
+
+#: admin/settings-page-output.php:276
+msgid "Revisions:"
+msgstr ""
+
+#: admin/settings-page-output.php:281
+msgid "Default: -1 (unlimited). Range: 1-99."
+msgstr ""
+
+#: admin/settings-page-output.php:282
+msgid "%1$sWARNING:%2$s This option is not designed to override specific post type capabilities - if it doesn't support revisions, then this option won't change it in any way."
+msgstr ""
+
+#: admin/settings-page-output.php:294
 msgid "Save Settings"
 msgstr ""
 
-#: admin/settings-page.php:142
+#: admin/settings-page.php:143
 msgid "Settings Saved Successfully!"
 msgstr ""
 

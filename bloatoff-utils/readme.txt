@@ -4,11 +4,45 @@ Tags: bloat, optimization, utilities, admin-panel
 Tested up to: 6.8.3
 Requires at least: 5.5
 Requires PHP: 7.4
-Stable tag: 0.9.6
+Stable tag: 0.9.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description ##
+
+The basic idea is to give devs/admins easy access to disable typical bloat, redundant functions or whole modules with just few clicks.
+
+The whole thing started as bunch of optimizations I have used on my projects and with time I've decided to convert those into plugin and keep my functions.php file a bit cleaner.
+
+There's no fancy UI's, external libraries, hidden features - just clean, fast and easy way to disable things you might not want to have in your project/website.
+
+*** Functionalities for current version:
+
+** Bloat
+Gutenberg styles removal
+Wordpress emojis removal
+RSS feeds removal
+Rreally Simple Discovery removal
+Shortlink removal
+REST Discovery link removal
+oEmbed discovery link removal
+Admin widgets in dashboard removal
+Native XML sitemap removal
+Admin help tabs removal
+About WP sub-menu and thank you message removal
+Site Health disabling/removal
+Import/Export page removal
+
+** Utilities
+Comments system removal
+Widgets removal (those under "Appearance")
+oEmbed restriction
+Self-pingbacks removal
+Heartbeat interval option
+Image Process Engine - force GD
+Limit number of revisions
+Native tags taxonomy removal
+Author archive pages disabling
 
 ## Docs / Source ##
 
@@ -55,11 +89,17 @@ A. Yes. There's no paywalls or hidden/premium features.
 Q. Is it safe to use?
 A. Most of the options should be safe to use, but please read the descriptions, especially those marked with red asterisk next to function title.
 
+Q. How is it different, from already available solutions in repository?
+A. The final effect is probably the same in most cases; the three rules, that might be as well treated as possible differences:
+    1. this plugin does not add anything more, than absolutely needed to actually set things off;
+    2. it always will be (or at least try to) focused on core-related, optimization features;
+    3. try to inform about the features in the best possible way, without infodumps.
+
 Q. Where is the settings page located?
-A. Under general settings tab, or /wp-admin/options-general.php?page=bloatoff-utils; keep in mind, that the tab is only available to administrators and above.
+A. Under general settings tab, or /wp-admin/options-general.php?page=bloatoff-utils; keep in mind, that the tab is only available to administrators and roles above.
 
 Q. Is it working on multisite installations?
-A. As for now, there's no network-wide configuration or dedicated page for network-wide settings, so it's per-website basis. It's on to-do list, but can't really say when it's gonna be added and properly tested.
+A. As for now, there's no network-wide configuration or dedicated page, so it's per-website basis. It's on to-do list, but can't really say when it's gonna be added and properly tested.
 
 Q. Will you consider adding new features?
 A. Looking for new features is ongoing-WIP, so yeah. Feel free to point anything worth adding.
@@ -114,6 +154,17 @@ Q. Does the plugin leaves anything behind after uninstall?
 A. No, all the options saved in database are cleared upon plugin removal.
 
 ## Changelog ##
+
+v0.9.7
+* Added new utility - removal of authors archive pages
+* Updated some descriptions
+* Updated translation file
+* Updated readme.txt
+
+v0.9.6.1
+* Changed maximum values for revisions (from 999 to 99) and Heartbeat API interval (from 86400s to 3600s)
+* Changed priority for last filter in Site Health optimization (from PHP_INT_MAX to 999)
+* Updated readme.txt
 
 v0.9.6
 * Extended descriptions to allow sanitized translations with <br>, <strong> and </strong> html tags

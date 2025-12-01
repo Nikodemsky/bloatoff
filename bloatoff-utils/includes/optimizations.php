@@ -246,7 +246,7 @@ if (!empty($bloatoff_options['wpsitehealth'])) {
     add_filter('rest_endpoints', 'disable_site_health_rest_endpoints');
     add_filter('wp_fatal_error_handler_enabled', '__return_false');
     add_action('admin_menu', 'remove_site_health_menu_pages', 1);
-    add_filter('user_has_cap', 'remove_site_health_capabilities', PHP_INT_MAX, 4);
+    add_filter('user_has_cap', 'remove_site_health_capabilities', 999, 4);
 }
 
 // #13 Import/Export - menu pages
