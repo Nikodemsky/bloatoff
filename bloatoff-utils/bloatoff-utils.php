@@ -4,13 +4,12 @@
  * Plugin URI:        https://github.com/Nikodemsky/bloatoff
  * Description:       Remove bloat and redundant functions, and further optimize your WordPress with just a few clicks.
  * Version:           0.9.7.1
- * Requires at least: 5.5
+ * Requires at least: 6.3
  * Requires PHP:      7.4
  * Author:            Wojciech Górski
  * Author URI:        https://w3wg.com/en/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://github.com/Nikodemsky/bloatoff
  * Text Domain:       bloatoff-utils
  * Domain Path:       /languages
  */

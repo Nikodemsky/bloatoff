@@ -20,7 +20,7 @@ function bu_disable_comments() {
         global $pagenow;
         
         if ($pagenow === 'edit-comments.php' || $pagenow === 'options-discussion.php') {
-            wp_redirect(admin_url());
+            wp_safe_redirect(admin_url());
             exit;
         }
 
@@ -133,7 +133,7 @@ function bou_unregister_default_tags_taxonomy() {
 // #09 Author archive pages
 function bou_disable_author_archives() {
     if ( is_author() ) {
-        wp_redirect( home_url(), 301 );
+        wp_safe_redirect( home_url(), 301 );
         exit;
     }
 }

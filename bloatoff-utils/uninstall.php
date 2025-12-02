@@ -10,11 +10,9 @@ delete_option('bloatoff_settings');
 
 // For multisite, delete from all sites
 if (is_multisite()) {
-    global $wpdb;
+    $sites = get_sites(array('fields' => 'ids'));
     
-    $blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
-    
-    foreach ($blog_ids as $blog_id) {
+    foreach ($sites as $blog_id) {
         switch_to_blog($blog_id);
         delete_option('bloatoff_settings');
         restore_current_blog();

@@ -25,26 +25,34 @@ if (!defined('ABSPATH')) {
     <details>
         <summary>
             <?php echo esc_html($title); ?> 
-            <span class="more" data-tooltip="<?php esc_html_e( 'Click, to show more info.', 'bloatoff-utils' ); ?>">[?]</span>
+            <span class="more" data-tooltip="<?php esc_html_e( 'Click to show more info.', 'bloatoff-utils' ); ?>">[?]</span>
             <?php if (!empty($warning)): echo '<span class="bou-warning-asterisk">*</span>'; endif; ?>
         </summary>
         <aside>
             <p> 
                 <?php if (!empty($description)): // Description or extensive instructions ?>
                     <span class="description extensive-instructions">
-                        <?php echo bou_ext_txt( sprintf( $description, '<strong>', '</strong>', '<br>' )); ?>
+                        <?php
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo bou_ext_txt( sprintf( $description, '<strong>', '</strong>', '<br>' )); ?>
                     </span>
                 <?php endif; ?>
                 <?php if (!empty($savings)): // Savings - green font ?>
                     <br>
                     <span class="description bou-savings">
-                        <?php echo bou_ext_txt( sprintf( $savings, '<strong>', '</strong>', '<br>' )); ?>
+                        <?php
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo bou_ext_txt( sprintf( $savings, '<strong>', '</strong>', '<br>' )); 
+                        ?>
                     </span>
                 <?php endif; ?>
                 <?php if (!empty($warning)): // Warning - red font ?>
                     <br>
                     <span class="description bou-warning">
-                        <?php echo bou_ext_txt( sprintf( $warning, '<strong>', '</strong>', '<br>' )); ?>
+                        <?php
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo bou_ext_txt( sprintf( $warning, '<strong>', '</strong>', '<br>' )); 
+                        ?>
                     </span>
                 <?php endif; ?>
                 <?php if (!empty($readmore)): // Read more link ?>

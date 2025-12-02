@@ -33,6 +33,7 @@ if (!defined('ABSPATH')) {
                 'description' => __('This will remove all Gutenberg-related css files from loading on the frontend.', 'bloatoff-utils'),
                 'savings' => __('Approximately 117KB of savings, or 162KB if WooCommerce is active.', 'bloatoff-utils'),
                 'setting_id' => 'gutenberg',
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s This may break your site, if you\'re using theme, plugin or module based on Gutenberg blocks.', 'bloatoff-utils'),
                 'label' => __('Remove Gutenberg styles?', 'bloatoff-utils'),
                 'options' => $options
@@ -41,8 +42,10 @@ if (!defined('ABSPATH')) {
             // Site Health setting
             bu_render_settings_block(array(
                 'title' => __('Site Health', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
                 'description' => __('Since there\'s no safe way to completely remove the Site Health module from WP, without modifying the core, this function is limited to:%3$s1. fatal error handler removal;%3$s2. REST API endpoints removal;%3$s3. disabling all scheduled checks;%3$s4. disabling all initial tests;%3$s5. disabling access to site-health.php page for all roles, including super-admins.%3$sNote: The Site Health metabox on the dashboard is handled by "Admin widgets in Dashboard" option.', 'bloatoff-utils'),
                 'setting_id' => 'wpsitehealth',
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s Some plugins may depend on that functionality; additionally your admin, super-admin or support might need access to site technical data.', 'bloatoff-utils'),
                 'label' => __('Disable Site Health?', 'bloatoff-utils'),
                 'readmore' => 'https://wordpress.org/documentation/article/site-health-screen/',
@@ -52,8 +55,9 @@ if (!defined('ABSPATH')) {
             // Emojis setting
             bu_render_settings_block(array(
                 'title' => __('WordPress Emojis', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
                 'description' => __('This option will remove all the styles and scripts related to native WordPress emojis module;%3$s be aware — it will also remove emojis from TinyMCE editor.', 'bloatoff-utils'),
-                'savings' => __('Approximately 20KB of savings, plus removal of CDN calls.'),
+                'savings' => __('Approximately 20KB of savings, plus removal of CDN calls.', 'bloatoff-utils'),
                 'setting_id' => 'emojis',
                 'readmore' => 'https://wordpress.org/documentation/wordpress-version/version-4-2/#emoji',
                 'label' => __('Disable WordPress emojis?', 'bloatoff-utils'),
@@ -93,6 +97,7 @@ if (!defined('ABSPATH')) {
             // Rest API link
             bu_render_settings_block(array(
                 'title' => __('REST discovery link', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
                 'description' => __('Removes the REST discovery link from the head.%3$s Only needed for specific uses or apps — otherwise not required.', 'bloatoff-utils'),
                 'setting_id' => 'restapilink',
                 'label' => __('Remove REST discovery link?', 'bloatoff-utils'),
@@ -103,7 +108,9 @@ if (!defined('ABSPATH')) {
             // oEmbed discovery link
             bu_render_settings_block(array(
                 'title' => __('oEmbed discovery link', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
                 'description' => __('Removes the oEmbed discovery link from the header.3$s Some external services may need this to fetch content from your site.', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s May cause issues when fetching content on external, non-WordPress services.', 'bloatoff-utils'),
                 'setting_id' => 'oembeddisclink',
                 'label' => __('Remove oEmbed discovery link?', 'bloatoff-utils'),
@@ -124,6 +131,7 @@ if (!defined('ABSPATH')) {
             // Native Sitemap
             bu_render_settings_block(array(
                 'title' => __('Native XML Sitemap', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
                 'description' => __('WordPress 5.5.0 introduced native XML sitemaps, which are created by default at /wp-sitemap.xml.%3$s If you\'re using an SEO plugin with its own sitemap enabled, this native functionality is redundant.', 'bloatoff-utils'),
                 'setting_id' => 'nativexmlsitemap',
                 'readmore' => 'https://wordpress.org/documentation/wordpress-version/version-5-5/#search',
@@ -180,6 +188,7 @@ if (!defined('ABSPATH')) {
             bu_render_settings_block(array(
                 'title' => __('Comments system removal', 'bloatoff-utils'),
                 'description' => __('This will disable the comments system completely, set proper redirects, and remove admin pages for comment management.', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s If you\'re connected to an external comment system like Disqus via native comment support (for example, through the official Disqus plugin), this will also remove/disable that connection.', 'bloatoff-utils'),
                 'setting_id' => 'comments',
                 'label' => __('Disable built-in WordPress comment system?', 'bloatoff-utils'),
@@ -220,6 +229,7 @@ if (!defined('ABSPATH')) {
             bu_render_settings_block(array(
                 'title' => __('Image Processing engine', 'bloatoff-utils'),
                 'description' => __('WordPress uses Imagick by default if available. This option forces the use of GD, which is generally faster. The downside is that GD supports far fewer image formats, and image quality may drop', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s Since the GD PHP extension requires additional configuration for WebP/AVIF formats, those may not be available for plugins like CompressX or even for native processing in the media library.', 'bloatoff-utils'),
                 'setting_id' => 'ipe',
                 'readmore' => 'https://github.com/WordPress/WordPress/blob/master/wp-includes/media.php#L4292',
@@ -231,6 +241,7 @@ if (!defined('ABSPATH')) {
             bu_render_settings_block(array(
                 'title' => __('Tags taxonomy removal', 'bloatoff-utils'),
                 'description' => __('This will remove the native tags taxonomy from the default post type (Posts → Tags in the admin menu). Many non-blog websites don\'t need tags at all.', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s If you have any tags indexed and at least some traffic comes through them — this option can affect your position on search engines like Google.', 'bloatoff-utils'),
                 'setting_id' => 'tagstax',
                 'readmore' => 'https://developer.wordpress.org/themes/classic-themes/basics/categories-tags-custom-taxonomies/#default-taxonomies',
@@ -241,7 +252,9 @@ if (!defined('ABSPATH')) {
             // Author archives
             bu_render_settings_block(array(
                 'title' => __('Author archives', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
                 'description' => __('Author archive pages can be considered redundant on installations where posts are not categorized by WP users (as authors). %3$s Since author archives are part of WP Core and can\'t be "removed" per se, this function is limited to:%3$s 1. Redirection of any author archive page queries to the homepage (301 redirect); %3$s Removal of author links from functions like author_link/the_author_posts_link; %3$s 3. Removal of authors from native sitemaps (if actively used). %3$s Note: Most of the time, author archive indexation can be configured in the settings of most popular SEO plugins.', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s If you have author pages indexed and they are vital for your website\'s blog categorization — this option can affect your position on search engines like Google.', 'bloatoff-utils'),
                 'setting_id' => 'authorarchives',
                 'readmore' => 'https://codex.wordpress.org/Author_Templates',
@@ -262,6 +275,7 @@ if (!defined('ABSPATH')) {
                 'number_default' => 15,
                 'readmore' => 'https://developer.wordpress.org/plugins/javascript/heartbeat-api/',
                 'number_description' => __('Default: 15 seconds. Range: 1-3600 seconds (1 hour).', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s Be very careful when changing this interval — it could break some essential functionality on your website.', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -269,6 +283,7 @@ if (!defined('ABSPATH')) {
             // Global revisions
             bu_render_number_block(array(
                 'title' => __('Revisions', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>, %3$s3 - <br>
                 'description' => __('This option allows you to change the global number of revisions (including all post types that support revisions) per post/page. By default, WordPress does not limit the number of revisions, which usually makes the database much bigger than it should be — especially on content-heavy websites like blogs. This leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - Revisions are disabled. %3$s %1$s1-999%2$s - Revisions for all post types are limited to this number.%3$s Note: Revisions won\'t be removed right away once this option is enabled — you need to update each post/page to have its revisions removed. If you want to clear your installation of revisions globally, try using plugins like "WP-Sweep" or "Optimize Database after Deleting Revisions."', 'bloatoff-utils'),
                 'savings' => __('Reduces load on the database and its size in the long run.', 'bloatoff-utils'),
                 'setting_id' => 'revisions',
@@ -279,6 +294,7 @@ if (!defined('ABSPATH')) {
                 'number_default' => -1,
                 'readmore' => 'https://wordpress.org/documentation/article/revisions/',
                 'number_description' => __('Default: -1 (unlimited). Range: 1-99.', 'bloatoff-utils'),
+                // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s This option is not designed to override specific post type capabilities — if a post type doesn\'t support revisions, this option won\'t change that.', 'bloatoff-utils'),
                 'options' => $options
             ));
@@ -294,8 +310,11 @@ if (!defined('ABSPATH')) {
     <?php submit_button(__('Save Settings', 'bloatoff-utils')); ?>
 </form>
 
-<?php if (isset($_GET['settings-updated'])) { 
+<?php 
+// Nonce verification is handled by the Settings API via settings_fields().
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+if ( isset( $_GET['settings-updated'] ) && sanitize_key( $_GET['settings-updated'] ) ) { 
     echo '<div class="bou-settings-notices">'; 
-        settings_errors('bloatoff_messages'); 
+        settings_errors( 'bloatoff_messages' ); 
     echo '</div>'; } 
 ?>

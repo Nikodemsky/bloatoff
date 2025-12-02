@@ -64,7 +64,7 @@ function bu_disable_feeds() {
 }
 
 function bu_disable_feeds_callback() {
-    wp_die(__('No feeds available!', 'bloatoff-utils'));
+    wp_die(esc_html__('No feeds available!', 'bloatoff-utils'));
 }
 
 // #04 Really Simple Discovery removal
@@ -166,12 +166,12 @@ function block_import_export_page_access() {
     
     // Block direct access to export.php
     if ($pagenow === 'export.php') {
-        wp_die(__('Export functionality has been disabled.', 'bloatoff-utils'), __('Export Disabled', 'bloatoff-utils'), ['response' => 403]);
+        wp_die(esc_html__('Export functionality has been disabled.', 'bloatoff-utils'), esc_html__('Export Disabled', 'bloatoff-utils'), ['response' => 403]);
     }
     
     // Block direct access to import.php
     if ($pagenow === 'import.php') {
-        wp_die(__('Import functionality has been disabled.', 'bloatoff-utils'), __('Import Disabled', 'bloatoff-utils'), ['response' => 403]);
+        wp_die(esc_html__('Import functionality has been disabled.', 'bloatoff-utils'), esc_html__('Import Disabled', 'bloatoff-utils'), ['response' => 403]);
     }
 }
 

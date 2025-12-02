@@ -111,7 +111,10 @@ function bu_sanitize_settings($input) {
 
 // Suppress native Wordpress admin notice box
 function bu_suppress_default_notice() {
-    if (isset($_GET['page']) && $_GET['page'] === 'bloatoff-utils') {
+    
+    // Nonce verification is handled by the Settings API via settings_fields().
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if (isset($_GET['page']) && sanitize_key($_GET['page']) === 'bloatoff-utils') {
         
         // Remove the action
         remove_action('admin_notices', 'settings_errors');
@@ -136,7 +139,9 @@ function bu_settingspage_html() {
     $options = get_option('bloatoff_settings', array());
 
     // Add custom success message
-    if (isset($_GET['settings-updated'])) {
+    // Nonce verification is handled by the Settings API via settings_fields().
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if ( isset( $_GET['settings-updated'] ) && sanitize_key( $_GET['settings-updated'] ) ) {
         add_settings_error(
             'bloatoff_messages', 
             'bloatoff_message', 
@@ -183,7 +188,11 @@ function bu_enqueue_admin_styles($hook_suffix) {
         'bou-form-handlers',
         BLOATOFF_PLUGIN_URL . 'admin/assets/js/form-handler.min.js',
         array(),
-        BLOATOFF_VERSION
+        BLOATOFF_VERSION,
+        array(
+            'in_footer' => true,
+            'strategy'  => 'defer',
+        )
     );
 
 }

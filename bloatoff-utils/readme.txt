@@ -1,12 +1,14 @@
-### Bloat-off: bloat removal and optimization utilities ###
+### Bloat-off - bloat removal and utilities ###
 
 Tags: bloat, optimization, utilities, admin-panel
-Tested up to: 6.8.3
-Requires at least: 5.5
+Tested up to: 6.8
+Requires at least: 6.3
 Requires PHP: 7.4
 Stable tag: 0.9.7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Remove bloat and redundant functions, and further optimize your WordPress with just a few clicks.
 
 ## Description ##
 
