@@ -28,7 +28,7 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Image Process Engine - force GD (new in 0.9.5)
 * Limit number of revisions (new in 0.9.6)
 * Native tags taxonomy removal (new in 0.9.6)
-* Option to disable authors archive pages (new in 0.9.7)
+* Option to disable author archive pages (new in 0.9.7)
 
 **To do**
 * ~Possibly tab-closing and moving for both blocks~ (it would mean more js and possibly css, scrapping the idea for now)
