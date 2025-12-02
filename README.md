@@ -49,3 +49,4 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
 * Add polish translation
+* Check whether removing some of the default image sizes (for example: medium_large, 1536x1536, 2048x2048) does make sense as an utility option
