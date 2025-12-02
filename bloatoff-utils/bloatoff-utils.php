@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('BLOATOFF_VERSION', '0.9.7');
+define('BLOATOFF_VERSION', '0.9.7.1');
 define('BLOATOFF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('BLOATOFF_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -41,4 +41,5 @@ function bu_add_settings_link($links) {
     array_unshift($links, $settings_link);
     return $links;
 }
+
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'bu_add_settings_link');
