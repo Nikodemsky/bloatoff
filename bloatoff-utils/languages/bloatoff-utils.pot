@@ -319,7 +319,7 @@ msgstr ""
 #. Translators: %3$s3 - <br>
 
 #: admin/settings-page-output.php:256
-msgid "Author archive pages can be considered redundant on installations where posts are not categorized by WP users (as authors). %3$s Since author archives are part of WP Core and can't be \"removed\" per se, this function is limited to:%3$s 1. Redirection of any author archive page queries to the homepage (301 redirect); %3$s Removal of author links from functions like author_link/the_author_posts_link; %3$s 3. Removal of authors from native sitemaps (if actively used). %3$s Note: Most of the time, author archive indexation can be configured in the settings of most popular SEO plugins."
+msgid "Author archive pages can be considered redundant on installations where posts are not categorized by WP users (as authors). %3$s Since author archives are part of WP Core and can't be \"removed\" per se, this function is limited to:%3$s 1. redirection of any author archive page queries to the homepage (301 redirect); %3$s 2. removal of author links from functions like author_link/the_author_posts_link; %3$s 3. removal of authors from native sitemaps (if actively used). %3$s Note: Most of the time, author archive indexation can be configured in the settings of most popular SEO plugins."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
