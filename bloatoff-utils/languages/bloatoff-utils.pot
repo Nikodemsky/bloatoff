@@ -143,7 +143,7 @@ msgstr ""
 #. Translators: %3$s3 - <br>
 
 #: admin/settings-page-output.php:112
-msgid "Removes the oEmbed discovery link from the header.3$s Some external services may need this to fetch content from your site."
+msgid "Removes the oEmbed discovery link from the header.%3$s Some external services may need this to fetch content from your site."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>

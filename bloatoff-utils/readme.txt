@@ -1,12 +1,13 @@
 === Bloat-off - bloat removal and utilities ===
 
-Tags: bloat, optimization, utilities, admin-panel
-Tested up to: 6.8
+Tags: remove bloat, optimizations, utility, admin, tools
+Tested up to: 6.9
 Requires at least: 6.3
 Requires PHP: 7.4
 Stable tag: 0.9.7.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Contributors: Nikodemsky
 
 Remove bloat and redundant functions, and further optimize your WordPress with just a few clicks.
 
@@ -20,9 +21,9 @@ Functionalities for current version:
 
 = Bloat =
 * Gutenberg styles removal
-* Wordpress emojis removal
+* WordPress emojis removal
 * RSS feeds removal
-* Rreally Simple Discovery removal
+* Really Simple Discovery removal
 * Shortlink removal
 * REST Discovery link removal
 * oEmbed discovery link removal
@@ -41,7 +42,7 @@ Functionalities for current version:
 * Heartbeat interval option
 * Image Process Engine - force GD
 * Limit number of revisions
-* ative tags taxonomy removal
+* Tags taxonomy removal
 * Author archive pages disabling
 
 = Docs / Source =
@@ -89,7 +90,7 @@ Yes. There are no paywalls or hidden/premium features.
 
 = Is it safe to use? =
 
-Most of the options should be safe to use, but please read the carefully — especially those marked with a red asterisk next to function title.
+Most of the options should be safe to use, but please read the descriptions carefully — especially those marked with a red asterisk next to function title.
 
 = How is it different from other solutions already available in the repository? =
 
@@ -100,7 +101,7 @@ The end result is probably the same in most cases. The differences come down to 
 
 = Where is the settings page located? =
 
-Under the general settings tab, or at /wp-admin/options-general.php?page=bloatoff-utils; keep in mind that the tab is only available to administrators (or super-admins) by default.
+Under the general settings tab, or (by default) at /options-general.php?page=bloatoff-utils; keep in mind that the tab is only available to administrators (or super-admins) by default.
 
 = Does it work on multisite installations? =
 
@@ -121,7 +122,7 @@ While I do think it shouldn't be enabled by default, it's more of a security-rel
 
 = Would you consider adding jQuery migrate removal option? =
 
-It's disabled by default from WP versions 5.5.0 and later. If something on your website still relies on this kind of backward compatibility, you should consider updating it — removing jQuery Migrate could potentially break some functionality. However, if you still need to remove it manually, add this code to your functions.php after &#60;&#63;php: [Snippet](https://github.com/Nikodemsky/Wordpress-related/blob/main/disable-jquerymigrate.php)
+It's disabled by default from WP versions 5.5.0 and later. If something on your website still relies on this kind of backward compatibility, you should consider updating it — removing jQuery Migrate could potentially break some functionality. However, if you still need to remove it manually, add this code to your functions.php after `<?php`: [Snippet](https://github.com/Nikodemsky/Wordpress-related/blob/main/disable-jquerymigrate.php)
 
 = My website went blank after removing Gutenberg styles! What should I do? =
 
@@ -141,7 +142,7 @@ WordPress-related services don't need them and will fetch everything correctly e
 = Why is there no option to remove the WordPress Heartbeat API altogether? =
 
 Too many things rely on Heartbeat, and removing it entirely is a really bad idea — most of the potential issues would come from that option.
-If you still want to disable it, add this snippet to your active theme's functions.php file after &#60;&#63;php: [Snippet](https://github.com/Nikodemsky/Wordpress-related/blob/main/disable-heartbeat.php). Just keep in mind that you're doing so at your own risk, and it may break some key functionality on your website.
+If you still want to disable it, add this snippet to your active theme's functions.php file after `<?php`: [Snippet](https://github.com/Nikodemsky/Wordpress-related/blob/main/disable-heartbeat.php). Just keep in mind that you're doing so at your own risk, and it may break some key functionality on your website.
 
 = Does the Heartbeat control change the interval for all instances? =
 
@@ -159,7 +160,7 @@ In most cases, you'll see the active Image Process Engine along with more detail
 
 = Will old revisions be removed right away after limiting their number globally? =
 
-No. Revisions are only removed when you update each post or page individually..
+No. Revisions are only removed when you update each post or page individually.
 
 = Why is there no option to remove old revisions in bulk? =
 
@@ -189,6 +190,11 @@ If it's related to the Bloat-off plugin, please create a new thread on the WordP
 
 No, all options saved in the database are cleared upon plugin removal.
 
+== Screenshots ==
+
+1. Full list of options - version 0.9.7.x
+2. Visible descriptions.
+
 == Changelog ==
 
 To check & download versions prior to v0.9.7.1 please check [Official GitHub repository](https://github.com/Nikodemsky/bloatoff)
@@ -210,7 +216,7 @@ To check & download versions prior to v0.9.7.1 please check [Official GitHub rep
 * Updated readme.txt
 
 = v0.9.6 =
-* Extended descriptions to allow sanitized translations with <br>, <strong> and </strong> html tags
+* Extended descriptions to allow sanitized translations with `<br>`, `<strong>` and `</strong>` html tags
 * Additional styling to descriptions, for better readability
 * New utility added - limit number of revisions
 * New utility added - native tags taxonomy removal
@@ -240,7 +246,7 @@ To check & download versions prior to v0.9.7.1 please check [Official GitHub rep
 
 = v0.9.3 =
 * Added tooltips to question markings.
-* Added more info link to native Wordpress widgets removal utility.
+* Added more info link to native WordPress widgets removal utility.
 * Added more info link to Heartbeat API utility.
 * Changed Description on Heartbeat API utility.
 * Added more info link to oEmbed utility.

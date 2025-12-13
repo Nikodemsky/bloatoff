@@ -2,11 +2,11 @@
 /*
  * Plugin Name:       Bloat-off - bloat removal and utilities
  * Plugin URI:        https://github.com/Nikodemsky/bloatoff
- * Description:       Remove bloat and redundant functions, and further optimize your WordPress with just a few clicks.
+ * Description:       Remove bloat, redundant functions, and further optimize your WordPress site with just a few clicks.
  * Version:           0.9.7.1
  * Requires at least: 6.3
  * Requires PHP:      7.4
- * Author:            Wojciech Górski
+ * Author:            Wojciech Górski - Nikodemsky
  * Author URI:        https://w3wg.com/en/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -41,5 +41,4 @@ function bu_add_settings_link($links) {
     array_unshift($links, $settings_link);
     return $links;
 }
-
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'bu_add_settings_link');

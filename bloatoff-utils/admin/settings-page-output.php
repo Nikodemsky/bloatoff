@@ -109,7 +109,7 @@ if (!defined('ABSPATH')) {
             bu_render_settings_block(array(
                 'title' => __('oEmbed discovery link', 'bloatoff-utils'),
                 // Translators: %3$s3 - <br>
-                'description' => __('Removes the oEmbed discovery link from the header.3$s Some external services may need this to fetch content from your site.', 'bloatoff-utils'),
+                'description' => __('Removes the oEmbed discovery link from the header.%3$s Some external services may need this to fetch content from your site.', 'bloatoff-utils'),
                 // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s May cause issues when fetching content on external, non-WordPress services.', 'bloatoff-utils'),
                 'setting_id' => 'oembeddisclink',
