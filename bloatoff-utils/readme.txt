@@ -16,8 +16,7 @@ The basic idea is to give administrators easy access to disable typical bloat, n
 
 There are no fancy UIs, external libraries, or hidden features — just clean, fast and easy way to disable things you might not want in your project or website.
 
-Functionalities for current version:
----------------------
+### Functionalities for current version:
 
 = Bloat =
 * Gutenberg styles removal
@@ -265,4 +264,5 @@ To check & download versions prior to v0.9.7.1 please check [Official GitHub rep
 
 = v0.9.1 =
 * Added uninstaller
+
 * Added link to settings page
