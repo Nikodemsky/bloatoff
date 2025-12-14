@@ -160,8 +160,8 @@ function bu_settingspage() {
     
     $bou_settings_hook = add_submenu_page(
         'options-general.php',
-        'Bloat-off - bloat removal and utilities',
-        'Bloat-off - bloat removal and utilities',
+        __( 'Bloat-off', 'bloatoff-utils' ),
+        __( 'Bloat-off', 'bloatoff-utils' ),
         'manage_options',
         'bloatoff-utils',
         'bu_settingspage_html'
