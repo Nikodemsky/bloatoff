@@ -42,11 +42,11 @@ Pretty straight-forward tool, that provides easy-to-use controls to remove of bu
 * ~JS handler for Heartbeat input~ (done)
 * ~Check whether on-site search disabling is worth adding as utility~ (after analyzing the case it doesn't seems like disabling it make any difference, if there's no call for search form on the frontend; this function would seem like novelty, rather than anything meaningful)
 * ~Check whether disabling author archives is worth adding as utility or bloat removal~ (done, added in 0.9.7)
+* ~Add polish translation~ (done [@wp](https://translate.wordpress.org/locale/pl/default/wp-plugins/bloatoff-utils/))
 * Full Multisite compability (work required, no ETA)
 * Better descriptions and sources to more info (WIP/ partially done)
 * Possibly settings import/export
 * Look for new optimization opportunities (WIP)
 * Find better info source for self-pingbacks
 * Find proper info source for gutenberg styles
-* Add polish translation
 * Check whether removing some of the default image sizes (for example: medium_large, 1536x1536, 2048x2048) does make sense as an utility option
