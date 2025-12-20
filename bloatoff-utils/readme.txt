@@ -4,7 +4,7 @@ Tags: remove bloat, optimizations, utility, admin, tools
 Tested up to: 6.9
 Requires at least: 6.3
 Requires PHP: 7.4
-Stable tag: 0.9.7.1
+Stable tag: 0.9.7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Contributors: Nikodemsky
@@ -198,6 +198,12 @@ No, all options saved in the database are cleared upon plugin removal.
 
 To check & download versions prior to v0.9.7.1 please check [Official GitHub repository](https://github.com/Nikodemsky/bloatoff)
 
+= v0.9.7.2 =
+* Fix for Heartbeat function
+* Fixes for descriptions
+* Fixes for translations
+* Fix for settings page title
+
 = v0.9.7.1 =
 * Updated readme.txt
 * Updated functions descriptions
@@ -266,3 +272,4 @@ To check & download versions prior to v0.9.7.1 please check [Official GitHub rep
 * Added uninstaller
 
 * Added link to settings page
+
