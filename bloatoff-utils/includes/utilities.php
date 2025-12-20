@@ -87,7 +87,8 @@ function bu_no_self_ping( &$links ) {
 
 // #05 Heartbeat interval
 function bu_modify_heartbeat() {
-    add_filter('heartbeat_settings', function($settings) use ($options) {
+    add_filter('heartbeat_settings', function($settings) {
+        $bloatoff_options = get_option('bloatoff_settings', array());
         $interval = isset($bloatoff_options['heartbeat_number']) ? absint($bloatoff_options['heartbeat_number']) : 15;
         
         // Ensure interval is within valid range
@@ -191,4 +192,5 @@ if (!empty($bloatoff_options['authorarchives'])) {
     add_filter( 'wp_sitemaps_register_providers', 'bou_remove_users_sitemap_provider' );
     add_filter( 'author_link', '__return_empty_string' );
     add_filter( 'the_author_posts_link', 'get_the_author', 99 );
+
 }
