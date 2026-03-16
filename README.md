@@ -2,6 +2,8 @@
 
 Pretty straight-forward tool, that provides easy-to-use controls to remove of bunch of native Wordpress bloatware, also contains few useful utilities for optimization.
 
+Official, WordPress repository URL: https://wordpress.org/plugins/bloatoff-utils/
+
 ### Functionalities for version 0.9.x:
 
 **Bloat**
