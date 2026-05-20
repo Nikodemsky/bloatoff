@@ -7,6 +7,9 @@ Official, WordPress repository URL: https://wordpress.org/plugins/bloatoff-utils
 ### Functionalities for version 0.9.x:
 
 **Bloat**
+* Disabling AI functionality introduced in version 7.0 (new in 0.9.8)
+* Disabling the Command Palette, including the shortcut in the admin bar (new in 0.9.8)
+* Removal of jQuery migrate script (new in 0.9.8)
 * Gutenberg styles removal
 * Wordpress emojis removal
 * RSS feeds removal
