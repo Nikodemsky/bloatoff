@@ -60,7 +60,7 @@ if (!defined('ABSPATH')) {
                     <span class="description bou-readmore">
                         <a 
                             href="<?php echo esc_url($readmore); ?>" 
-                            rel="nofollow external" 
+                            rel="noopener noreferrer external" 
                             target="_blank">[<?php esc_html_e( 'Read more', 'bloatoff-utils' ); ?>]
                         </a>
                     </span>

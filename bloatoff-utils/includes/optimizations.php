@@ -67,16 +67,6 @@ function bu_disable_feeds_callback() {
     wp_die(esc_html__('No feeds available!', 'bloatoff-utils'));
 }
 
-// #04 Really Simple Discovery removal
-function bu_disable_rsd() {
-    remove_action( 'wp_head', 'rsd_link' );
-}
-
-// #05 Shortlink removal
-function bu_disable_shortlink() {
-    remove_action('wp_head', 'wp_shortlink_wp_head', 10);
-}
-
 // #06 Admin dashboard widgets
 function bu_remove_all_dashboard_widgets() {
 
@@ -89,21 +79,6 @@ function bu_remove_all_dashboard_widgets() {
     remove_meta_box( 'dashboard_primary', 'dashboard', 'side' ); // WordPress News
     remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' ); // Site Health
     remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' ); // At a Glance
-}
-
-// #07 REST link in header
-function bu_remove_rest_link() {
-    remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-}
-
-// #08 oEmbed discovery link in header
-function bu_remove_oembed_link() {
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-}
-
-// #09 Native XML Sitemap
-function bu_disable_native_sitemap() {
-    add_filter('wp_sitemaps_enabled', '__return_false');
 }
 
 // #10 Admin help tabs
@@ -120,7 +95,7 @@ function bu_admin_bar_remove_logo() {
 }
 
 // #12 Disable Site Health - initial tests
-function disable_site_health_tests($tests) {
+function bu_disable_site_health_tests($tests) {
     return [
         'direct' => [],
         'async'  => []
@@ -128,13 +103,13 @@ function disable_site_health_tests($tests) {
 }
 
 // #12 Disable Site Health - scheduled checks
-function disable_site_health_scheduled_check() {
+function bu_disable_site_health_scheduled_check() {
     remove_action('wp_site_health_scheduled_check', 'wp_site_health_scheduled_check');
     wp_clear_scheduled_hook('wp_site_health_scheduled_check');
 }
 
 // #12 Disable Site Health - REST API endpoints
-function disable_site_health_rest_endpoints($endpoints) {
+function bu_disable_site_health_rest_endpoints($endpoints) {
     foreach ($endpoints as $route => $endpoint) {
         if (strpos($route, '/wp-site-health/') === 0) {
             unset($endpoints[$route]);
@@ -144,13 +119,13 @@ function disable_site_health_rest_endpoints($endpoints) {
 }
 
 // #12 Disable Site Health - menu pages
-function remove_site_health_menu_pages() {
+function bu_remove_site_health_menu_pages() {
     remove_submenu_page('tools.php', 'site-health.php');
     remove_submenu_page('tools.php', 'health-check');
 }
 
 // #12 Disable Site Health - capabilities
-function remove_site_health_capabilities($allcaps, $caps, $args, $user) {
+function bu_remove_site_health_capabilities($allcaps, $caps, $args, $user) {
     if (isset($allcaps['view_site_health_checks'])) {
         $allcaps['view_site_health_checks'] = false;
     }
@@ -161,7 +136,7 @@ function remove_site_health_capabilities($allcaps, $caps, $args, $user) {
 }
 
 // #13 Import/Export - menu pages
-function block_import_export_page_access() {
+function bu_block_import_export_page_access() {
     global $pagenow;
     
     // Block direct access to export.php
@@ -175,9 +150,29 @@ function block_import_export_page_access() {
     }
 }
 
-function remove_import_export_menu_pages() {
+function bu_remove_import_export_menu_pages() {
     remove_submenu_page('tools.php', 'export.php');
     remove_submenu_page('tools.php', 'import.php');
+}
+
+// #15 Remove Command palette and shortcut in admin bar
+function bu_remove_command_palette() {
+    wp_deregister_script('wp-commands');
+    wp_dequeue_script('wp-commands');
+}
+
+function bu_remove_command_palette_shortcut($wp_admin_bar) {
+    $wp_admin_bar->remove_node('command-palette');
+}
+
+// #16 jQuery Migrate removal
+function bu_remove_jquery_migrate( $scripts ) {
+    if ( isset( $scripts->registered['jquery'] ) ) {
+        $script = $scripts->registered['jquery'];
+        if ( $script->deps ) {
+            $script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+        }
+    }
 }
 
 /** List of checks **/
@@ -201,12 +196,12 @@ if (!empty($bloatoff_options['rss'])) {
 
 // #04 Really Simple Discovery
 if (!empty($bloatoff_options['rsdl'])) {
-    add_action('init', 'bu_disable_rsd');
+    remove_action( 'wp_head', 'rsd_link' );
 }
 
 // #05 Shortlink
 if (!empty($bloatoff_options['shortlink'])) {
-    add_action('init', 'bu_disable_shortlink');
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 }
 
 // #06 Admin dashboard widgets
@@ -216,17 +211,19 @@ if (!empty($bloatoff_options['adminwidgets'])) {
 
 // #07 REST link in header
 if (!empty($bloatoff_options['restapilink'])) {
-    add_action( 'after_setup_theme', 'bu_remove_rest_link' );
+    add_action('init', function() {
+        remove_action('wp_head', 'rest_output_link_wp_head', 10);
+    }, 11);
 }
 
 // #08 oEmbed discovery link in header
 if (!empty($bloatoff_options['oembeddisclink'])) {
-    add_action( 'after_setup_theme', 'bu_remove_oembed_link' );
+    remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 }
 
 // #09 Native XML Sitemap
 if (!empty($bloatoff_options['nativexmlsitemap'])) {
-    add_action('init', 'bu_disable_native_sitemap');
+    add_filter('wp_sitemaps_enabled', '__return_false');
 }
 
 // #10 Admin help tabs
@@ -241,16 +238,32 @@ if (!empty($bloatoff_options['wplogoty'])) {
 
 // #12 Site Health 
 if (!empty($bloatoff_options['wpsitehealth'])) {
-    add_filter('site_status_tests', 'disable_site_health_tests');
-    add_action('wp_loaded', 'disable_site_health_scheduled_check');
-    add_filter('rest_endpoints', 'disable_site_health_rest_endpoints');
+    add_filter('site_status_tests', 'bu_disable_site_health_tests');
+    add_action('wp_loaded', 'bu_disable_site_health_scheduled_check');
+    add_filter('rest_endpoints', 'bu_disable_site_health_rest_endpoints');
     add_filter('wp_fatal_error_handler_enabled', '__return_false');
-    add_action('admin_menu', 'remove_site_health_menu_pages', 1);
-    add_filter('user_has_cap', 'remove_site_health_capabilities', 999, 4);
+    add_action('admin_menu', 'bu_remove_site_health_menu_pages', 1);
+    add_filter('user_has_cap', 'bu_remove_site_health_capabilities', 999, 4);
 }
 
 // #13 Import/Export - menu pages
 if (!empty($bloatoff_options['importexport'])) {
-    add_action('admin_init', 'block_import_export_page_access', 1);
-    add_action('admin_menu', 'remove_import_export_menu_pages', 1);
+    add_action('admin_init', 'bu_block_import_export_page_access', 1);
+    add_action('admin_menu', 'bu_remove_import_export_menu_pages', 1);
+}
+
+// #14 Disable WordPress AI functions
+if (!empty($bloatoff_options['wpai'])) {
+    add_filter( 'wp_supports_ai', '__return_false', 999);
+}
+
+// #15 Remove Command Palette
+if (!empty($bloatoff_options['commandpalette'])) {
+    add_action('admin_enqueue_scripts', 'bu_remove_command_palette');
+    add_action('admin_bar_menu', 'bu_remove_command_palette_shortcut', 999);
+}
+
+// #16 jQuery Migrate removal
+if (!empty($bloatoff_options['jquerymigrate'])) {
+    add_action( 'wp_default_scripts', 'bu_remove_jquery_migrate' );
 }

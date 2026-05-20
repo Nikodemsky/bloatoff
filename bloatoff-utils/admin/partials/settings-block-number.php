@@ -69,7 +69,7 @@ $number_value = isset($options[$setting_id . '_interval']) ? $options[$setting_i
                     <span class="description bou-readmore">
                         <a 
                             href="<?php echo esc_url($readmore); ?>" 
-                            rel="nofollow external" 
+                            rel="noreferrer noopener external" 
                             target="_blank">[<?php esc_html_e( 'Read more', 'bloatoff-utils' ); ?>]
                         </a>
                     </span>

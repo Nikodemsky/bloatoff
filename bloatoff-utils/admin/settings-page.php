@@ -59,6 +59,7 @@ function bu_sanitize_settings($input) {
         'boolean' => array(
 
             // Bloat removal
+            'wpai',
             'gutenberg',
             'emojis',
             'rss',
@@ -72,6 +73,8 @@ function bu_sanitize_settings($input) {
             'wplogoty',
             'wpsitehealth',
             'importexport',
+            'commandpalette',
+            'jquerymigrate',
 
             // Utilities
             'comments',

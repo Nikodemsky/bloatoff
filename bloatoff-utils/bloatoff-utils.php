@@ -1,9 +1,9 @@
 <?php
 /*
  * Plugin Name:       Bloat-off - bloat removal and utilities
- * Plugin URI:        https://github.com/Nikodemsky/bloatoff
+ * Plugin URI:        https://wordpress.org/plugins/bloatoff-utils/
  * Description:       Remove bloat, redundant functions, and further optimize your WordPress site with just a few clicks.
- * Version:           0.9.7.2
+ * Version:           0.9.8
  * Requires at least: 6.3
  * Requires PHP:      7.4
  * Author:            Wojciech Górski - Nikodemsky
@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('BLOATOFF_VERSION', '0.9.7.2');
+define('BLOATOFF_VERSION', '0.9.8');
 define('BLOATOFF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('BLOATOFF_PLUGIN_URL', plugin_dir_url(__FILE__));
 

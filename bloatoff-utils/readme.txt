@@ -1,7 +1,7 @@
 === Bloat-off - bloat removal and utilities ===
 
 Tags: remove bloat, optimizations, utility, admin, tools
-Tested up to: 6.9
+Tested up to: 7.0
 Requires at least: 6.3
 Requires PHP: 7.4
 Stable tag: 0.9.7.2
@@ -19,6 +19,9 @@ There are no fancy UIs, external libraries, or hidden features — just clean, f
 ### Functionalities for current version:
 
 = Bloat =
+* Disabling AI functionality introduced in version 7.0
+* Disabling the Command Palette, including the shortcut in the admin bar
+* Removal of jQuery migrate script
 * Gutenberg styles removal
 * WordPress emojis removal
 * RSS feeds removal
@@ -119,10 +122,6 @@ No, I'm keeping it core-related only. Sorry.
 
 While I do think it shouldn't be enabled by default, it's more of a security-related feature and doesn't affect installation optimization.
 
-= Would you consider adding jQuery migrate removal option? =
-
-It's disabled by default from WP versions 5.5.0 and later. If something on your website still relies on this kind of backward compatibility, you should consider updating it — removing jQuery Migrate could potentially break some functionality. However, if you still need to remove it manually, add this code to your functions.php after `<?php`: [Snippet](https://github.com/Nikodemsky/Wordpress-related/blob/main/disable-jquerymigrate.php)
-
 = My website went blank after removing Gutenberg styles! What should I do? =
 
 There's a high probability that either your theme or one of your plugins is using Gutenberg-related styles or scripts.
@@ -197,6 +196,18 @@ No, all options saved in the database are cleared upon plugin removal.
 == Changelog ==
 
 To check & download versions prior to v0.9.7.1 please check [Official GitHub repository](https://github.com/Nikodemsky/bloatoff)
+
+= v0.9.8 =
+* Added "noopener noreferrer" to "Read more" links inside descriptions
+* Added option to globally disable AI functions in Wordpress (`wp_supports_ai`)
+* Added option to disable Commands Palette (and remove shortcut from admin bar)
+* Brought back the option to remove the jQuery migrate script
+* Optimized removal of native sitemap
+* Optimized removal of RSD link
+* Optimized removal of Shortlink
+* Optimized removal of oEmbed discovery links
+* Fix REST link removal
+* Changed names of few functions to avoid possible conflicts
 
 = v0.9.7.2 =
 * Fix for Heartbeat function

@@ -27,6 +27,17 @@ if (!defined('ABSPATH')) {
             <!-- Settings -->
             <?php
 
+            // AI settings
+            bu_render_settings_block(array(
+                'title' => __('WordPress AI', 'bloatoff-utils'),
+                'description' => __('This option will forcibly disable all of the WordPress AI functions introduced in version 7.0.', 'bloatoff-utils'),
+                'setting_id' => 'wpai',
+                // Translators: %1$s - <strong>, :%2$s - </strong>
+                'warning' => __('%1$sWARNING:%2$s This option has no effect on versions prior to 7.0.', 'bloatoff-utils'),
+                'label' => __('Disable AI functions in WordPress?', 'bloatoff-utils'),
+                'options' => $options
+            ));
+
             // Gutenberg setting
             bu_render_settings_block(array(
                 'title' => __('Gutenberg styles', 'bloatoff-utils'),
@@ -49,6 +60,31 @@ if (!defined('ABSPATH')) {
                 'warning' => __('%1$sWARNING:%2$s Some plugins may depend on that functionality; additionally your admin, super-admin or support might need access to site technical data.', 'bloatoff-utils'),
                 'label' => __('Disable Site Health?', 'bloatoff-utils'),
                 'readmore' => 'https://wordpress.org/documentation/article/site-health-screen/',
+                'options' => $options
+            ));
+
+            // Command Palette setting
+            bu_render_settings_block(array(
+                'title' => __('Command Palette', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
+                'description' => __('This option will remove the shortcut command palette, available in the admin panel after clicking on the magnifier icon (admin top bar) or pressing Ctrl+K.', 'bloatoff-utils'),
+                'setting_id' => 'commandpalette',
+                // Translators: %1$s - <strong>, :%2$s - </strong>
+                'label' => __('Disable Command Palette?', 'bloatoff-utils'),
+                'readmore' => 'https://wordpress.org/documentation/article/site-editor-command-palette/',
+                'options' => $options
+            ));
+
+            // jQuery migrate
+            bu_render_settings_block(array(
+                'title' => __('jQuery Migrate', 'bloatoff-utils'),
+                // Translators: %3$s3 - <br>
+                'description' => __('This option will remove the outdated jQuery Migrate script included in Admin Panel by default.', 'bloatoff-utils'),
+                'savings' => __('Approximately 14KB of savings.', 'bloatoff-utils'),
+                'warning' => __('%1$sWARNING:%2$s While in most cases you probably won\'t need it, make sure that none of your plugins/themes/modules or anything else will require backward compatibility with older jQuery versions.', 'bloatoff-utils'),
+                'setting_id' => 'jquerymigrate',
+                'readmore' => 'https://github.com/jquery/jquery-migrate#jquery-migrate',
+                'label' => __('Disable jQuery Migrate?', 'bloatoff-utils'),
                 'options' => $options
             ));
 
