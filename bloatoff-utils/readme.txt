@@ -4,7 +4,7 @@ Tags: remove bloat, optimizations, utility, admin, tools
 Tested up to: 7.0
 Requires at least: 6.3
 Requires PHP: 7.4
-Stable tag: 0.9.8
+Stable tag: 0.9.8.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Contributors: Nikodemsky
@@ -21,6 +21,7 @@ There are no fancy UIs, external libraries, or hidden features — just clean, f
 = Bloat =
 * Disabling AI functionality introduced in version 7.0
 * Disabling the Command Palette, including the shortcut in the admin bar
+* Disabling view transitions introduced in version 7.0
 * Removal of jQuery migrate script
 * Gutenberg styles removal
 * WordPress emojis removal
@@ -190,12 +191,22 @@ No, all options saved in the database are cleared upon plugin removal.
 
 == Screenshots ==
 
-1. Full list of options - version 0.9.7.x
-2. Visible descriptions.
+1. Screenshot from admin panel - version 0.9.8.x
+2. Full list of options - version 0.9.7.x
+3. Visible descriptions - version 0.9.7.x
 
 == Changelog ==
 
 To check & download versions prior to v0.9.7.1 please check [Official GitHub repository](https://github.com/Nikodemsky/bloatoff)
+
+= v0.9.8.2 =
+* Fixed error and notice for Command Palette
+* Fixed deprecated function on help tabs
+
+= v0.9.8.1 =
+* Added option to disable view transitions (introducetd in version 7.0)
+* Updated translation file
+* Added link to Wordpress AI info
 
 = v0.9.8 =
 * Added "noopener noreferrer" to "Read more" links inside descriptions

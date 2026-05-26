@@ -82,9 +82,11 @@ function bu_remove_all_dashboard_widgets() {
 }
 
 // #10 Admin help tabs
-function bu_remove_help_tabs($old_help, $screen_id, $screen){
-    $screen->remove_help_tabs();
-    return $old_help;
+function bu_remove_help_tabs() {
+    $screen = get_current_screen();
+    if ( $screen ) {
+        $screen->remove_help_tabs();
+    }
 }
 
 // #11 WP logo submenu and thank you message, the function has been taken from: https://wordpress.org/plugins/remove-admin-bar-logo
@@ -155,14 +157,22 @@ function bu_remove_import_export_menu_pages() {
     remove_submenu_page('tools.php', 'import.php');
 }
 
-// #15 Remove Command palette and shortcut in admin bar
+// #15 Remove Command palette and shortcut in admin bar and hint in block editor
 function bu_remove_command_palette() {
-    wp_deregister_script('wp-commands');
-    wp_dequeue_script('wp-commands');
+    wp_dequeue_script( 'wp-core-commands' );
+    wp_deregister_script( 'wp-core-commands' );
 }
 
 function bu_remove_command_palette_shortcut($wp_admin_bar) {
     $wp_admin_bar->remove_node('command-palette');
+}
+
+function bu_hide_command_pallete_be_hint() {
+    $custom_css = "
+    .editor-header__center .editor-document-bar__shortcut {
+            display: none !important; pointer-events: none; visibility: hidden !important;
+    }";
+    wp_add_inline_style( 'wp-components', $custom_css );
 }
 
 // #16 jQuery Migrate removal
@@ -173,6 +183,12 @@ function bu_remove_jquery_migrate( $scripts ) {
             $script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
         }
     }
+}
+
+// #17 View transitions
+function bu_disable_view_transitions() {
+    wp_dequeue_style( 'wp-view-transitions-admin' );
+    wp_deregister_style( 'wp-view-transitions-admin' );
 }
 
 /** List of checks **/
@@ -228,7 +244,7 @@ if (!empty($bloatoff_options['nativexmlsitemap'])) {
 
 // #10 Admin help tabs
 if (!empty($bloatoff_options['adminhelptabs'])) {
-    add_filter( 'contextual_help', 'bu_remove_help_tabs', 999, 3 );
+    add_action( 'admin_head', 'bu_remove_help_tabs' );
 }
 
 // #11 WP logo submenu and thank you message
@@ -261,9 +277,15 @@ if (!empty($bloatoff_options['wpai'])) {
 if (!empty($bloatoff_options['commandpalette'])) {
     add_action('admin_enqueue_scripts', 'bu_remove_command_palette');
     add_action('admin_bar_menu', 'bu_remove_command_palette_shortcut', 999);
+    add_action('enqueue_block_editor_assets', 'bu_hide_command_pallete_be_hint' );
 }
 
 // #16 jQuery Migrate removal
 if (!empty($bloatoff_options['jquerymigrate'])) {
-    add_action( 'wp_default_scripts', 'bu_remove_jquery_migrate' );
+    add_action('wp_default_scripts', 'bu_remove_jquery_migrate' );
+}
+
+// #17 View transitions
+if (!empty($bloatoff_options['adminviewtransitions'])) {
+    add_action('admin_enqueue_scripts', 'bu_disable_view_transitions' );
 }

@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Bloat-off - bloat removal and utilities package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bloat-off - bloat removal and utilities 0.9.8\n"
+"Project-Id-Version: Bloat-off - bloat removal and utilities 0.9.8.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bloatoff-utils\n"
-"POT-Creation-Date: 2026-05-20 22:42:02+00:00\n"
+"POT-Creation-Date: 2026-05-22 23:08:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,421 +44,435 @@ msgstr ""
 msgid "Disable AI functions in WordPress?"
 msgstr ""
 
-#: admin/settings-page-output.php:43
-msgid "Gutenberg styles"
-msgstr ""
-
 #: admin/settings-page-output.php:44
-msgid "This will remove all Gutenberg-related css files from loading on the frontend."
+msgid "View transitions"
 msgstr ""
 
 #: admin/settings-page-output.php:45
-msgid "Approximately 117KB of savings, or 162KB if WooCommerce is active."
+msgid "This option will disable transition effect animation introduced in version 7.0."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
 #: admin/settings-page-output.php:48
-msgid "%1$sWARNING:%2$s This may break your site, if you're using theme, plugin or module based on Gutenberg blocks."
-msgstr ""
-
-#: admin/settings-page-output.php:49
-msgid "Remove Gutenberg styles?"
+msgid "Disable view transitions?"
 msgstr ""
 
 #: admin/settings-page-output.php:55
-msgid "Site Health"
+msgid "Gutenberg styles"
 msgstr ""
 
-#. Translators: %3$s3 - <br>
+#: admin/settings-page-output.php:56
+msgid "This will remove all Gutenberg-related css files from loading on the frontend."
+msgstr ""
 
 #: admin/settings-page-output.php:57
-msgid "Since there's no safe way to completely remove the Site Health module from WP, without modifying the core, this function is limited to:%3$s1. fatal error handler removal;%3$s2. REST API endpoints removal;%3$s3. disabling all scheduled checks;%3$s4. disabling all initial tests;%3$s5. disabling access to site-health.php page for all roles, including super-admins.%3$sNote: The Site Health metabox on the dashboard is handled by \"Admin widgets in Dashboard\" option."
+msgid "Approximately 117KB of savings, or 162KB if WooCommerce is active."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
 #: admin/settings-page-output.php:60
-msgid "%1$sWARNING:%2$s Some plugins may depend on that functionality; additionally your admin, super-admin or support might need access to site technical data."
+msgid "%1$sWARNING:%2$s This may break your site, if you're using theme, plugin or module based on Gutenberg blocks."
 msgstr ""
 
 #: admin/settings-page-output.php:61
+msgid "Remove Gutenberg styles?"
+msgstr ""
+
+#: admin/settings-page-output.php:67
+msgid "Site Health"
+msgstr ""
+
+#. Translators: %3$s3 - <br>
+
+#: admin/settings-page-output.php:69
+msgid "Since there's no safe way to completely remove the Site Health module from WP, without modifying the core, this function is limited to:%3$s1. fatal error handler removal;%3$s2. REST API endpoints removal;%3$s3. disabling all scheduled checks;%3$s4. disabling all initial tests;%3$s5. disabling access to site-health.php page for all roles, including super-admins.%3$sNote: The Site Health metabox on the dashboard is handled by \"Admin widgets in Dashboard\" option."
+msgstr ""
+
+#. Translators: %1$s - <strong>, :%2$s - </strong>
+
+#: admin/settings-page-output.php:72
+msgid "%1$sWARNING:%2$s Some plugins may depend on that functionality; additionally your admin, super-admin or support might need access to site technical data."
+msgstr ""
+
+#: admin/settings-page-output.php:73
 msgid "Disable Site Health?"
 msgstr ""
 
-#: admin/settings-page-output.php:68
+#: admin/settings-page-output.php:80
 msgid "Command Palette"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:70
+#: admin/settings-page-output.php:82
 msgid "This option will remove the shortcut command palette, available in the admin panel after clicking on the magnifier icon (admin top bar) or pressing Ctrl+K."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:73
+#: admin/settings-page-output.php:85
 msgid "Disable Command Palette?"
 msgstr ""
 
-#: admin/settings-page-output.php:80
+#: admin/settings-page-output.php:92
 msgid "jQuery Migrate"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:82
+#: admin/settings-page-output.php:94
 msgid "This option will remove the outdated jQuery Migrate script included in Admin Panel by default."
 msgstr ""
 
-#: admin/settings-page-output.php:83
+#: admin/settings-page-output.php:95
 msgid "Approximately 14KB of savings."
 msgstr ""
 
-#: admin/settings-page-output.php:84
+#: admin/settings-page-output.php:96
 msgid "%1$sWARNING:%2$s While in most cases you probably won't need it, make sure that none of your plugins/themes/modules or anything else will require backward compatibility with older jQuery versions."
 msgstr ""
 
-#: admin/settings-page-output.php:87
+#: admin/settings-page-output.php:99
 msgid "Disable jQuery Migrate?"
 msgstr ""
 
-#: admin/settings-page-output.php:93
+#: admin/settings-page-output.php:105
 msgid "WordPress Emojis"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:95
+#: admin/settings-page-output.php:107
 msgid "This option will remove all the styles and scripts related to native WordPress emojis module;%3$s be aware — it will also remove emojis from TinyMCE editor."
 msgstr ""
 
-#: admin/settings-page-output.php:96
+#: admin/settings-page-output.php:108
 msgid "Approximately 20KB of savings, plus removal of CDN calls."
 msgstr ""
 
-#: admin/settings-page-output.php:99
+#: admin/settings-page-output.php:111
 msgid "Disable WordPress emojis?"
 msgstr ""
 
-#: admin/settings-page-output.php:105
+#: admin/settings-page-output.php:117
 msgid "RSS feeds"
 msgstr ""
 
-#: admin/settings-page-output.php:106
+#: admin/settings-page-output.php:118
 msgid "This will remove the native RSS feed functionality — including the comments RSS feed."
 msgstr ""
 
-#: admin/settings-page-output.php:109
+#: admin/settings-page-output.php:121
 msgid "Disable RSS feeds?"
 msgstr ""
 
-#: admin/settings-page-output.php:115
+#: admin/settings-page-output.php:127
 msgid "Really Simple Discovery"
 msgstr ""
 
-#: admin/settings-page-output.php:116
+#: admin/settings-page-output.php:128
 msgid "Removes RSD links from the header. There's no need for these if you're not using services like Pingback or a dedicated application that requires them."
 msgstr ""
 
-#: admin/settings-page-output.php:118
+#: admin/settings-page-output.php:130
 msgid "Remove RSD?"
 msgstr ""
 
-#: admin/settings-page-output.php:125
+#: admin/settings-page-output.php:137
 msgid "Shortlink"
 msgstr ""
 
-#: admin/settings-page-output.php:126
+#: admin/settings-page-output.php:138
 msgid "Removes shortlink to current post or page from the header."
 msgstr ""
 
-#: admin/settings-page-output.php:128
+#: admin/settings-page-output.php:140
 msgid "Remove shortlink?"
 msgstr ""
 
-#: admin/settings-page-output.php:135
+#: admin/settings-page-output.php:147
 msgid "REST discovery link"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:137
+#: admin/settings-page-output.php:149
 msgid "Removes the REST discovery link from the head.%3$s Only needed for specific uses or apps — otherwise not required."
 msgstr ""
 
-#: admin/settings-page-output.php:139
+#: admin/settings-page-output.php:151
 msgid "Remove REST discovery link?"
 msgstr ""
 
-#: admin/settings-page-output.php:146
+#: admin/settings-page-output.php:158
 msgid "oEmbed discovery link"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:148
+#: admin/settings-page-output.php:160
 msgid "Removes the oEmbed discovery link from the header.%3$s Some external services may need this to fetch content from your site."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:150
+#: admin/settings-page-output.php:162
 msgid "%1$sWARNING:%2$s May cause issues when fetching content on external, non-WordPress services."
 msgstr ""
 
-#: admin/settings-page-output.php:152
+#: admin/settings-page-output.php:164
 msgid "Remove oEmbed discovery link?"
 msgstr ""
 
-#: admin/settings-page-output.php:159
+#: admin/settings-page-output.php:171
 msgid "Admin widgets in Dashboard"
 msgstr ""
 
-#: admin/settings-page-output.php:160
+#: admin/settings-page-output.php:172
 msgid "Removes all default widgets from the admin dashboard — like Quick Draft, Activity, News, etc."
 msgstr ""
 
-#: admin/settings-page-output.php:163
+#: admin/settings-page-output.php:175
 msgid "Remove all default Wordpress admin widgets in dashboard?"
 msgstr ""
 
-#: admin/settings-page-output.php:169
+#: admin/settings-page-output.php:181
 msgid "Native XML Sitemap"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:171
+#: admin/settings-page-output.php:183
 msgid "WordPress 5.5.0 introduced native XML sitemaps, which are created by default at /wp-sitemap.xml.%3$s If you're using an SEO plugin with its own sitemap enabled, this native functionality is redundant."
 msgstr ""
 
-#: admin/settings-page-output.php:174
+#: admin/settings-page-output.php:186
 msgid "Disable native XML Sitemap?"
 msgstr ""
 
-#: admin/settings-page-output.php:180
+#: admin/settings-page-output.php:192
 msgid "Admin help tabs"
 msgstr ""
 
-#: admin/settings-page-output.php:181
+#: admin/settings-page-output.php:193
 msgid "Removes all help tabs from the contextual help for the screen."
 msgstr ""
 
-#: admin/settings-page-output.php:184
+#: admin/settings-page-output.php:196
 msgid "Remove admin help tabs?"
 msgstr ""
 
-#: admin/settings-page-output.php:190
+#: admin/settings-page-output.php:202
 msgid "WP Logo sub-menu & Thank you message"
 msgstr ""
 
-#: admin/settings-page-output.php:191
+#: admin/settings-page-output.php:203
 msgid "This will remove the \"About WordPress\" sub-menu from the top of the admin menu and the \"Thank you\" message from the footer area in the admin panel."
 msgstr ""
 
-#: admin/settings-page-output.php:193
+#: admin/settings-page-output.php:205
 msgid "Disable WP sub-menu and thank you message?"
 msgstr ""
 
-#: admin/settings-page-output.php:199
+#: admin/settings-page-output.php:211
 msgid "Import/Export Pages"
 msgstr ""
 
-#: admin/settings-page-output.php:200
+#: admin/settings-page-output.php:212
 msgid "This will remove and restrict access to the import/export pages from the Tools admin menu."
 msgstr ""
 
-#: admin/settings-page-output.php:202
+#: admin/settings-page-output.php:214
 msgid "Disable Import/Export pages?"
 msgstr ""
 
-#: admin/settings-page-output.php:215
+#: admin/settings-page-output.php:227
 msgid "Utilities"
 msgstr ""
 
-#: admin/settings-page-output.php:225
+#: admin/settings-page-output.php:237
 msgid "Comments system removal"
 msgstr ""
 
-#: admin/settings-page-output.php:226
+#: admin/settings-page-output.php:238
 msgid "This will disable the comments system completely, set proper redirects, and remove admin pages for comment management."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:228
+#: admin/settings-page-output.php:240
 msgid "%1$sWARNING:%2$s If you're connected to an external comment system like Disqus via native comment support (for example, through the official Disqus plugin), this will also remove/disable that connection."
 msgstr ""
 
-#: admin/settings-page-output.php:230
+#: admin/settings-page-output.php:242
 msgid "Disable built-in WordPress comment system?"
 msgstr ""
 
-#: admin/settings-page-output.php:236
+#: admin/settings-page-output.php:248
 msgid "Widgets removal"
 msgstr ""
 
-#: admin/settings-page-output.php:237
+#: admin/settings-page-output.php:249
 msgid "This will remove the native widget system (from the Appearance admin menu)."
 msgstr ""
 
-#: admin/settings-page-output.php:240
+#: admin/settings-page-output.php:252
 msgid "Remove widget support?"
 msgstr ""
 
-#: admin/settings-page-output.php:246
+#: admin/settings-page-output.php:258
 msgid "oEmbed restriction"
 msgstr ""
 
-#: admin/settings-page-output.php:247
+#: admin/settings-page-output.php:259
 msgid "It will disable oEmbed on site, while keeping it enabled for external platforms/apps/websites."
 msgstr ""
 
-#: admin/settings-page-output.php:250
+#: admin/settings-page-output.php:262
 msgid "Restrict oEmbed?"
 msgstr ""
 
-#: admin/settings-page-output.php:256
+#: admin/settings-page-output.php:268
 msgid "Self-pingbacks"
 msgstr ""
 
-#: admin/settings-page-output.php:257
+#: admin/settings-page-output.php:269
 msgid "Disables self-pingbacks after new post creation or internal linking."
 msgstr ""
 
-#: admin/settings-page-output.php:260
+#: admin/settings-page-output.php:272
 msgid "Disable self-pingbacks?"
 msgstr ""
 
-#: admin/settings-page-output.php:266
+#: admin/settings-page-output.php:278
 msgid "Image Processing engine"
 msgstr ""
 
-#: admin/settings-page-output.php:267
+#: admin/settings-page-output.php:279
 msgid "WordPress uses Imagick by default if available. This option forces the use of GD, which is generally faster. The downside is that GD supports far fewer image formats, and image quality may drop"
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:269
+#: admin/settings-page-output.php:281
 msgid "%1$sWARNING:%2$s Since the GD PHP extension requires additional configuration for WebP/AVIF formats, those may not be available for plugins like CompressX or even for native processing in the media library."
 msgstr ""
 
-#: admin/settings-page-output.php:272
+#: admin/settings-page-output.php:284
 msgid "Force GD Image Processing engine?"
 msgstr ""
 
-#: admin/settings-page-output.php:278
+#: admin/settings-page-output.php:290
 msgid "Tags taxonomy removal"
 msgstr ""
 
-#: admin/settings-page-output.php:279
+#: admin/settings-page-output.php:291
 msgid "This will remove the native tags taxonomy from the default post type (Posts → Tags in the admin menu). Many non-blog websites don't need tags at all."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:281
+#: admin/settings-page-output.php:293
 msgid "%1$sWARNING:%2$s If you have any tags indexed and at least some traffic comes through them — this option can affect your position on search engines like Google."
 msgstr ""
 
-#: admin/settings-page-output.php:284
+#: admin/settings-page-output.php:296
 msgid "Unregister default tags taxonomy?"
 msgstr ""
 
-#: admin/settings-page-output.php:290
+#: admin/settings-page-output.php:302
 msgid "Author archives"
 msgstr ""
 
 #. Translators: %3$s3 - <br>
 
-#: admin/settings-page-output.php:292
+#: admin/settings-page-output.php:304
 msgid "Author archive pages can be considered redundant on installations where posts are not categorized by WP users (as authors). %3$s Since author archives are part of WP Core and can't be \"removed\" per se, this function is limited to:%3$s 1. redirection of any author archive page queries to the homepage (301 redirect); %3$s 2. removal of author links from functions like author_link/the_author_posts_link; %3$s 3. removal of authors from native sitemaps (if actively used). %3$s Note: Most of the time, author archive indexation can be configured in the settings of most popular SEO plugins."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:294
+#: admin/settings-page-output.php:306
 msgid "%1$sWARNING:%2$s If you have author pages indexed and they are vital for your website's blog categorization — this option can affect your position on search engines like Google."
 msgstr ""
 
-#: admin/settings-page-output.php:297
+#: admin/settings-page-output.php:309
 msgid "Disable author archives?"
 msgstr ""
 
-#: admin/settings-page-output.php:303
+#: admin/settings-page-output.php:315
 msgid "WordPress Heartbeat API"
 msgstr ""
 
-#: admin/settings-page-output.php:304
+#: admin/settings-page-output.php:316
 msgid "The Heartbeat API is used for autosaving, post locking, and other real-time features. Increasing the interval reduces server load but may cause issues with functionality that heavily relies on the Heartbeat API."
 msgstr ""
 
-#: admin/settings-page-output.php:305
+#: admin/settings-page-output.php:317
 msgid "This reduces server requests and CPU usage on both the frontend and backend."
 msgstr ""
 
-#: admin/settings-page-output.php:307
+#: admin/settings-page-output.php:319
 msgid "Modify WordPress Heartbeat interval?"
 msgstr ""
 
-#: admin/settings-page-output.php:308
+#: admin/settings-page-output.php:320
 msgid "Interval (seconds):"
 msgstr ""
 
-#: admin/settings-page-output.php:313
+#: admin/settings-page-output.php:325
 msgid "Default: 15 seconds. Range: 1-3600 seconds (1 hour)."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:315
+#: admin/settings-page-output.php:327
 msgid "%1$sWARNING:%2$s Be very careful when changing this interval — it could break some essential functionality on your website."
 msgstr ""
 
-#: admin/settings-page-output.php:321
+#: admin/settings-page-output.php:333
 msgid "Revisions"
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>, %3$s3 - <br>
 
-#: admin/settings-page-output.php:323
+#: admin/settings-page-output.php:335
 msgid "This option allows you to change the global number of revisions (including all post types that support revisions) per post/page. By default, WordPress does not limit the number of revisions, which usually makes the database much bigger than it should be — especially on content-heavy websites like blogs. This leads to worse website load times.%3$s How it works:%3$s %1$s-1 / Off%2$s - Default, no limit on revisions.%3$s %1$s0%2$s - Revisions are disabled. %3$s %1$s1-999%2$s - Revisions for all post types are limited to this number.%3$s Note: Revisions won't be removed right away once this option is enabled — you need to update each post/page to have its revisions removed. If you want to clear your installation of revisions globally, try using plugins like \"WP-Sweep\" or \"Optimize Database after Deleting Revisions.\""
 msgstr ""
 
-#: admin/settings-page-output.php:324
+#: admin/settings-page-output.php:336
 msgid "Reduces load on the database and its size in the long run."
 msgstr ""
 
-#: admin/settings-page-output.php:326
+#: admin/settings-page-output.php:338
 msgid "Modify global revisions number?"
 msgstr ""
 
-#: admin/settings-page-output.php:327
+#: admin/settings-page-output.php:339
 msgid "Revisions:"
 msgstr ""
 
-#: admin/settings-page-output.php:332
+#: admin/settings-page-output.php:344
 msgid "Default: -1 (unlimited). Range: 1-99."
 msgstr ""
 
 #. Translators: %1$s - <strong>, :%2$s - </strong>
 
-#: admin/settings-page-output.php:334
+#: admin/settings-page-output.php:346
 msgid "%1$sWARNING:%2$s This option is not designed to override specific post type capabilities — if a post type doesn't support revisions, this option won't change that."
 msgstr ""
 
-#: admin/settings-page-output.php:346
+#: admin/settings-page-output.php:358
 msgid "Save Settings"
 msgstr ""
 
-#: admin/settings-page.php:151
+#: admin/settings-page.php:152
 msgid "Settings Saved Successfully!"
 msgstr ""
 
-#: admin/settings-page.php:166 admin/settings-page.php:167
+#: admin/settings-page.php:167 admin/settings-page.php:168
 msgid "Bloat-off"
 msgstr ""
 

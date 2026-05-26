@@ -75,6 +75,7 @@ function bu_sanitize_settings($input) {
             'importexport',
             'commandpalette',
             'jquerymigrate',
+            'adminviewtransitions',
 
             // Utilities
             'comments',

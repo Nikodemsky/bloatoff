@@ -35,6 +35,18 @@ if (!defined('ABSPATH')) {
                 // Translators: %1$s - <strong>, :%2$s - </strong>
                 'warning' => __('%1$sWARNING:%2$s This option has no effect on versions prior to 7.0.', 'bloatoff-utils'),
                 'label' => __('Disable AI functions in WordPress?', 'bloatoff-utils'),
+                'readmore' => 'https://make.wordpress.org/core/2026/05/14/wordpress-7-0-field-guide/#ai-building-blocks-of-the-future',
+                'options' => $options
+            ));
+
+            // View transitions
+            bu_render_settings_block(array(
+                'title' => __('View transitions', 'bloatoff-utils'),
+                'description' => __('This option will disable transition effect animation introduced in version 7.0.', 'bloatoff-utils'),
+                'setting_id' => 'adminviewtransitions',
+                // Translators: %1$s - <strong>, :%2$s - </strong>
+                'label' => __('Disable view transitions?', 'bloatoff-utils'),
+                'readmore' => 'https://core.trac.wordpress.org/ticket/64470',
                 'options' => $options
             ));
 
